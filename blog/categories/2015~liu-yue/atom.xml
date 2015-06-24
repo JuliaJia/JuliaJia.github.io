@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[分类：kernel~公开课 | JuliaJia's coder paradise]]></title>
-  <link href="http://www.juliajia.com/blog/categories/kernel~gong-kai-ke/atom.xml" rel="self"/>
+  <title><![CDATA[分类：2015~六月 | JuliaJia's coder paradise]]></title>
+  <link href="http://www.juliajia.com/blog/categories/2015~liu-yue/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
-  <updated>2015-06-25T00:45:49+08:00</updated>
+  <updated>2015-06-25T00:46:58+08:00</updated>
   <id>http://www.juliajia.com/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>

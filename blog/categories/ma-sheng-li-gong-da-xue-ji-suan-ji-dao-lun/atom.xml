@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：麻省理工大学-计算机导论 | JuliaJia's coder paradise]]></title>
+  <link href="http://www.juliajia.com/blog/categories/ma-sheng-li-gong-da-xue-ji-suan-ji-dao-lun/atom.xml" rel="self"/>
+  <link href="http://www.juliajia.com/"/>
+  <updated>2015-06-24T15:52:58+08:00</updated>
+  <id>http://www.juliajia.com/</id>
+  <author>
+    <name><![CDATA[Julia Jia]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【计算机导论】第一课 课程目标 数据类型 运算以及变量]]></title>
+    <link href="http://www.juliajia.com/blog/20150624/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%80%E8%AF%BE%20%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20%E8%BF%90%E7%AE%97%E4%BB%A5%E5%8F%8A%E5%8F%98%E9%87%8F.html"/>
+    <updated>2015-06-24T19:59:00+08:00</updated>
+    <id>http://www.juliajia.com/blog/20150624/Post-计算机导论 第一课 课程目标 数据类型 运算以及变量</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1"><strong>二、课程基本信息</strong></a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2"><strong>三、计算思维的概念和方法（核心）</strong></a></li>
+</ul>
+
+<h3 id="section">一、课程目标</h3>
+<ul>
+  <li>了解计算在解决技术问题中所扮演的角色</li>
+  <li>使用计算思维的基本工具来编写小规模的代码<strong>（写）</strong></li>
+  <li>使用计算工具的语言用来理解别人编写的程序<strong>（读）</strong></li>
+  <li>了解计算的基本能力和局限以及他们的代价<strong>（知道你能干什么，不能干什么）</strong></li>
+  <li>把科学问题转换进计算机的框架之内<strong>（应用）</strong>
+<!--more--></li>
+</ul>
+
+<hr />
+
+<h3 id="section-1"><strong>二、课程基本信息</strong></h3>
+<ul>
+  <li>语言：<code>python</code></li>
+  <li>课程重应用,不重死记硬背！</li>
+  <li>提出问题很重要！</li>
+  <li>记笔记的过程就是锻炼的过程！</li>
+</ul>
+
+<hr />
+
+<h3 id="section-2"><strong>三、计算思维的概念和方法（核心）</strong></h3>
+<ul>
+  <li>核心理念：像一个<code>计算机科学家</code>一样思考！</li>
+  <li>计算模式思维：</li>
+  <li>什么是计算相关？</li>
+  <li>什么是知识？</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>知识分为两种类型：</code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><code>1.陈述性的知识</code></p>
+</blockquote>
+
+<blockquote>
+  <p><em><code>所谓陈述性的知识就是用叙述事实的方式来思考它。比如定理、原理等，它不会帮你计算，它顶多帮你检查正确性，对你的操作做标杆/参考。</code></em></p>
+</blockquote>
+
+<blockquote>
+  <p><code>2.程序性的知识</code></p>
+</blockquote>
+
+<blockquote>
+  <p><em><code>所谓程序性的知识就是对推论过程的描述，比如猜想、测试等，他会让你知道如何寻找定理/原理。它是方法，是关于怎么办的知识。</code></em></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>我怎么样才能建立计算机程序去捕捉一系列的计算呢?</p>
+
+    <p><code>1.用来解决某种专门的问题—固定程序式计算机，比如计算器、密码机等 </code></p>
+
+    <p><code>2.用某种方法来实现想法的设备—存储程序式计算机 </code></p>
+
+    <p><code>3.计算机的核心：在初始指令序列上建造描述、方法的一个概念</code></p>
+  </li>
+  <li>
+    <p>什么才是正确的基本类型？</p>
+  </li>
+</ul>
+
+<p><img class="left" src="/JuliaJia半身照照片.JPG" title="Stupid ET #2" ></p>
+]]></content>
+  </entry>
+  
+</feed>

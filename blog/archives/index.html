@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="Blog Archive 2015 【计算机导论】第一课 课程目标 数据类型 运算以及变量
-Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计算机导论】第一课 课程目标 数据类型 运算以及变量 &hellip;">
+06 月 24 日 2015 分类： JuliaJia 80后技术宅，武大数学系毕业，BAT里待过两家，现在在一家小公司做运维经理，现居深圳。 目标：美国google研究院 目前研究方向： &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -30,6 +30,34 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   
 
@@ -45,20 +73,31 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="/atom.xml" rel="subscribe-rss" title="订阅RSS">RSS</a></li>
   
 </ul>
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="sitesearch" value="www.juliajia.com">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+    <input class="search" type="text" name="q" results="0" placeholder="搜索 = 输入+回车"/>
   </fieldset>
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/">博客</a></li>
+  <li><a href="/blog/archives">首页</a></li>
+  <li><a href="/class/Algorithm.html">Algorithm</a></li>
+  <li><a href="/class/coding.html">Coding</a></li>
+  <li><a href="/class/introspection.html">Introspection</a></li>
+  <li><a href="/class/life.html">Life</a></li>
+  <li><a href="/class/ops.html">OPS</a></li>
+  <li><a href="/class/plan.html">Plan</a></li>
+  <li><a href="/class/reading.html">Reading</a></li>
+  <li><a href="/class/riding.html">Riding</a></li>
+  <li><a href="/class/thinking.html">Thinking</a></li>
+  <li><a href="/class/travel.html">Travel</a></li>
+  <li><a href="/class/other.html">Other</a></li>
 </ul>
 
 </nav>
@@ -82,10 +121,10 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
 <article>
   
 <h1><a href="/blog/20150624/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%80%E8%AF%BE%20%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20%E8%BF%90%E7%AE%97%E4%BB%A5%E5%8F%8A%E5%8F%98%E9%87%8F.html">【计算机导论】第一课 课程目标 数据类型 运算以及变量</a></h1>
-<time datetime="2015-06-24T19:59:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>24</span> <span class='year'>2015</span></time>
+<time datetime="2015-06-24T19:59:00+08:00" pubdate><span class='month'>06 月</span> <span class='day'>24 日</span> <span class='year'>2015</span></time>
 
 <footer>
-  <span class="categories">posted in </span>
+  <span class="categories">分类： </span>
 </footer>
 
 
@@ -101,11 +140,16 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
 <aside class="sidebar">
   
     <section>
-  <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <h1>JuliaJia</h1>
+  <p>80后技术宅，武大数学系毕业，BAT里待过两家，现在在一家小公司做运维经理，现居深圳。</p>
+  <p>目标：美国google研究院</p>
+  <p>目前研究方向：跟大数据有关的一切
+  <a href="http://weibo.com/banbenlongma" target="_blank" title=" 我的微博"><i class="fa fa-weibo fa-2x"></i></a>
+  </a>
+  </p>
 </section>
 <section>
-  <h1>Recent Posts</h1>
+  <h1>最新文章</h1>
   <ul id="recent_posts">
     
       <li class="post">
@@ -115,13 +159,62 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
   </ul>
 </section>
 <section>
-  <h1>Categories</h1>
-  <ul id="categories">
-    <li class='catclass'><a href='/blog/categories/2015/'>2015</a><a href='##' onmousedown=showDiv('2015')><span class='exp_style' id='exp_2015'>[+]</span></a><span class='right_span'>(1)</span></li>
+<h1>Categories</h1>
+<head>
+<style type="text/css">
+
+.divclass
+{
+    display:none;
+    font-size:12px;
+    position:relative;
+    left:0px;
+    top:0px;
+    padding:0px 30px 0px 30px;
+}
+</style>
+<script language="javascript" type="text/javascript">
+
+function showDiv(divName)
+{
+    if (document.getElementById(divName).style.display == "block")
+        document.getElementById(divName).style.display = "none"; //隐藏层
+    else
+        document.getElementById(divName).style.display = "block"; //显示层
+}
+
+function GetRequest(name) {
+    var url = location.search; //获取url中"?"符后的字串
+       if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            if (name == strs[i].split("=")[0])
+            return unescape(strs[i].split("=")[1]);
+          }
+       }
+       return null;
+}
+</script>
+</head>
+<body>
+<div id="menu">
+<ul>
+<li class='catclass'><a href='/blog/categories/2015/'>2015</a><a href='##' onmousedown=showDiv('2015')><span class='exp_style' id='exp_2015'>[+]</span></a><span class='right_span'>(1)</span></li>
 <div id='2015' class='catsub'><li><a href='/blog/categories/2015~-liu-yue/?opendiv=2015'>             六月                       </a><span class='right_span'>1</span></li>
 </div>
-  </ul>
-</section><section>
+</ul>
+</div>
+</body>
+</html>
+
+<script language="javascript" type="text/javascript">
+var divname = GetRequest("opendiv");
+if (divname != null)
+    showDiv(divname)
+</script>
+</section>
+<section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
     <a style="font-size: NaN%" href="/tags/mitgong-kai-ke-bi-ji/">MIT公开课笔记</a>
@@ -142,7 +235,7 @@ Jun 24 2015 posted in About Me A little something about me. Recent Posts 【计�
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2015 - Julia Jia -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="credit">Powered by <a href="http://juliajia.com">JuliaJia</a></span>
 </p>
 
 </footer>

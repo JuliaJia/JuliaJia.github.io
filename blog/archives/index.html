@@ -178,15 +178,9 @@
 function showDiv(divName)
 {
     if (document.getElementById(divName).style.display == "block")
-        document.getElementById(divName).style.display = "none"; //显示层
-    else if (document.getElementById(divName).style.display == "")
-        document.getElementById(divName).style.display = "none"; //隐藏层
-	else if (document.getElementById(divName).style.display == "none")
-		document.getElementById(divName).style.display = "block";
-	else if (document.getElementById(divName).style.display != "")
         document.getElementById(divName).style.display = "none"; //隐藏层
     else
-		document.getElementById(divName).style.display = "none";
+        document.getElementById(divName).style.display = "block"; //显示层
 }
 
 function GetRequest(name) {

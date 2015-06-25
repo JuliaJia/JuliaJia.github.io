@@ -123,7 +123,7 @@
 <time datetime="2015-06-24T19:59:00+08:00" pubdate><span class='month'>06 月</span> <span class='day'>24 日</span> <span class='year'>2015</span></time>
 
 <footer>
-  <span class="categories">分类： <a class='category' href='/blog/categories/language/'>language</a>, <a class='category' href='/blog/categories/language~-english/'>    -english</a></span>
+  <span class="categories">分类： </span>
 </footer>
 
 
@@ -177,9 +177,15 @@
 function showDiv(divName)
 {
     if (document.getElementById(divName).style.display == "block")
+        document.getElementById(divName).style.display = "none"; //显示层
+    else if (document.getElementById(divName).style.display == "")
+        document.getElementById(divName).style.display = "none"; //隐藏层
+	else if (document.getElementById(divName).style.display == "none")
+		document.getElementById(divName).style.display = "block";
+	else if (document.getElementById(divName).style.display != "")
         document.getElementById(divName).style.display = "none"; //隐藏层
     else
-        document.getElementById(divName).style.display = "block"; //显示层
+		document.getElementById(divName).style.display = "none";
 }
 
 function GetRequest(name) {
@@ -199,49 +205,9 @@ function GetRequest(name) {
 <body>
 <div id="menu">
 <ul>
-<li class='catclass'><a href='/blog/categories/language/'>language</a><a href='##' onmousedown=showDiv('language') id='aexp_language'><span class='exp_style' id='exp_language'>[+]</span></a><span class='right_span'>(1)</span></li>
-<div id='language' class='catsub'><li><a href='/blog/categories/language~-english/?opendiv=language'>    -english</a><a href='##' onmousedown=showDiv('language~    -english') id='aexp_language~    -english'><span class='exp_style' id='exp_language~    -english'>[+]</span></a><span class='right_span'>1</span></li>
-</div><script language='javascript' type='text/javascript'>
-if (!document.getElementById('language')) document.getElementById('aexp_language').style.visibility = 'hidden';
-if (!document.getElementById('language~    -english')) document.getElementById('aexp_language~    -english').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/compiler/'>compiler</a><a href='##' onmousedown=showDiv('compiler') id='aexp_compiler'><span class='exp_style' id='exp_compiler'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('compiler')) document.getElementById('aexp_compiler').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/assembly/'>assembly</a><a href='##' onmousedown=showDiv('assembly') id='aexp_assembly'><span class='exp_style' id='exp_assembly'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('assembly')) document.getElementById('aexp_assembly').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/tools/'>tools</a><a href='##' onmousedown=showDiv('tools') id='aexp_tools'><span class='exp_style' id='exp_tools'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('tools')) document.getElementById('aexp_tools').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/system/'>system</a><a href='##' onmousedown=showDiv('system') id='aexp_system'><span class='exp_style' id='exp_system'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('system')) document.getElementById('aexp_system').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/kernel/'>kernel</a><a href='##' onmousedown=showDiv('kernel') id='aexp_kernel'><span class='exp_style' id='exp_kernel'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('kernel')) document.getElementById('aexp_kernel').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/android/'>android</a><a href='##' onmousedown=showDiv('android') id='aexp_android'><span class='exp_style' id='exp_android'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('android')) document.getElementById('aexp_android').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/debug/'>debug</a><a href='##' onmousedown=showDiv('debug') id='aexp_debug'><span class='exp_style' id='exp_debug'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('debug')) document.getElementById('aexp_debug').style.visibility = 'hidden';
-</script>
-<li><div style="background:#DDD; height:0.3em;"></div></li><li class='catclass'><a href='/blog/categories/algorithm/'>algorithm</a><a href='##' onmousedown=showDiv('algorithm') id='aexp_algorithm'><span class='exp_style' id='exp_algorithm'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('algorithm')) document.getElementById('aexp_algorithm').style.visibility = 'hidden';
-</script>
-<li class='catclass'><a href='/blog/categories/blog/'>blog</a><a href='##' onmousedown=showDiv('blog') id='aexp_blog'><span class='exp_style' id='exp_blog'>[+]</span></a><span class='right_span'>(0)</span></li>
-<script language='javascript' type='text/javascript'>
-if (!document.getElementById('blog')) document.getElementById('aexp_blog').style.visibility = 'hidden';
-</script>
-
+<li class='catclass'><a href='/blog/categories/2015/'>2015</a><a href='##' onmousedown=showDiv('2015')><span class='exp_style' id='exp_2015'>[+]</span></a><span class='right_span'>(1)</span></li>
+<div id='2015' class='catsub'><li><a href='/blog/categories/2015~-liu-yue/?opendiv=2015'>   六月      </a><span class='right_span'>1</span></li>
+</div>
 </ul>
 </div>
 </body>

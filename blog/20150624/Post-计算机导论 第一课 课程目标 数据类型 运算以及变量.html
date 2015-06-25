@@ -29,34 +29,6 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<!-- MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
   
 
@@ -72,31 +44,20 @@
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="订阅RSS">RSS</a></li>
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="sitesearch" value="www.juliajia.com">
-    <input class="search" type="text" name="q" results="0" placeholder="搜索 = 输入+回车"/>
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">博客</a></li>
-  <li><a href="/blog/archives">首页</a></li>
-  <li><a href="/class/Algorithm.html">Algorithm</a></li>
-  <li><a href="/class/coding.html">Coding</a></li>
-  <li><a href="/class/introspection.html">Introspection</a></li>
-  <li><a href="/class/life.html">Life</a></li>
-  <li><a href="/class/ops.html">OPS</a></li>
-  <li><a href="/class/plan.html">Plan</a></li>
-  <li><a href="/class/reading.html">Reading</a></li>
-  <li><a href="/class/riding.html">Riding</a></li>
-  <li><a href="/class/thinking.html">Thinking</a></li>
-  <li><a href="/class/travel.html">Travel</a></li>
-  <li><a href="/class/other.html">Other</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
@@ -201,18 +162,6 @@
 
   <footer>
     <p class="meta">
-	  
-
-<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
-<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
-<IMG alt="" src="http://7xjw6q.com1.z0.glb.clouddn.com/JuliaJia半身照照片.JPG" width=90 height=100></DIV> 
-<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
-作者： <A href="http://www.juliajia.com/">JuliaJia</A> <BR> 
-出处： <A href="http://www.juliajia.com/">http://www.juliajia.com/</A> 
-<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
-署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
-<a href="http://www.juliajia.com/">JuliaJia</a>（包含链接）。 </DIV></DIV> 
-
       
   
 
@@ -250,16 +199,11 @@
 <aside class="sidebar">
   
     <section>
-  <h1>JuliaJia</h1>
-  <p>80后技术宅，武大数学系毕业，BAT里待过两家，现在在一家小公司做运维经理，现居深圳。</p>
-  <p>目标：美国google研究院</p>
-  <p>目前研究方向：跟大数据有关的一切
-  <a href="http://weibo.com/banbenlongma" target="_blank" title=" 我的微博"><i class="fa fa-weibo fa-2x"></i></a>
-  </a>
-  </p>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
 </section>
 <section>
-  <h1>最新文章</h1>
+  <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
@@ -269,62 +213,13 @@
   </ul>
 </section>
 <section>
-<h1>Categories</h1>
-<head>
-<style type="text/css">
-
-.divclass
-{
-    display:none;
-    font-size:12px;
-    position:relative;
-    left:0px;
-    top:0px;
-    padding:0px 30px 0px 30px;
-}
-</style>
-<script language="javascript" type="text/javascript">
-
-function showDiv(divName)
-{
-    if (document.getElementById(divName).style.display == "block")
-        document.getElementById(divName).style.display = "none"; //隐藏层
-    else
-        document.getElementById(divName).style.display = "block"; //显示层
-}
-
-function GetRequest(name) {
-    var url = location.search; //获取url中"?"符后的字串
-       if (url.indexOf("?") != -1) {
-        var str = url.substr(1);
-        strs = str.split("&");
-        for(var i = 0; i < strs.length; i ++) {
-            if (name == strs[i].split("=")[0])
-            return unescape(strs[i].split("=")[1]);
-          }
-       }
-       return null;
-}
-</script>
-</head>
-<body>
-<div id="menu">
-<ul>
-<li class='catclass'><a href='/blog/categories/2015/'>2015</a><a href='##' onmousedown=showDiv('2015')><span class='exp_style' id='exp_2015'>[+]</span></a><span class='right_span'>(1)</span></li>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='catclass'><a href='/blog/categories/2015/'>2015</a><a href='##' onmousedown=showDiv('2015')><span class='exp_style' id='exp_2015'>[+]</span></a><span class='right_span'>(1)</span></li>
 <div id='2015' class='catsub'><li><a href='/blog/categories/2015~-liu-yue/?opendiv=2015'>             六月                       </a><span class='right_span'>1</span></li>
 </div>
-</ul>
-</div>
-</body>
-</html>
-
-<script language="javascript" type="text/javascript">
-var divname = GetRequest("opendiv");
-if (divname != null)
-    showDiv(divname)
-</script>
-</section>
-<section>
+  </ul>
+</section><section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
     <a style="font-size: NaN%" href="/tags/mitgong-kai-ke-bi-ji/">MIT公开课笔记</a>
@@ -345,7 +240,7 @@ if (divname != null)
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2015 - Julia Jia -
-  <span class="credit">Powered by <a href="http://juliajia.com">JuliaJia</a></span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>

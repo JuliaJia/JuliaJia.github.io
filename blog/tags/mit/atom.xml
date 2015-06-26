@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: MIT | JuliaJia's coder paradise]]></title>
   <link href="http://www.juliajia.com/blog/tags/mit/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
-  <updated>2015-06-26T17:13:35+08:00</updated>
+  <updated>2015-06-26T18:09:49+08:00</updated>
   <id>http://www.juliajia.com/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -20,9 +20,9 @@
     <id>http://www.juliajia.com/blog/20150624/Post-计算机导论 第一课 课程目标 数据类型 运算以及变量</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1"><strong>二、课程基本信息</strong></a></li>
-  <li><a href="#section-2" id="markdown-toc-section-2"><strong>三、计算思维的概念和方法（核心）</strong></a></li>
-  <li><a href="#python" id="markdown-toc-python"><strong>四、关于Python的一些简单介绍</strong></a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、课程基本信息</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三、计算思维的概念和方法（核心）</a></li>
+  <li><a href="#python" id="markdown-toc-python">四、关于Python的一些简单介绍</a></li>
 </ul>
 
 <h3 id="section">一、课程目标</h3>
@@ -37,7 +37,7 @@
 
 <hr />
 
-<h3 id="section-1"><strong>二、课程基本信息</strong></h3>
+<h3 id="section-1">二、课程基本信息</h3>
 <ul>
   <li>语言：<code>python</code></li>
   <li>课程重应用,不重死记硬背！</li>
@@ -47,7 +47,7 @@
 
 <hr />
 
-<h3 id="section-2"><strong>三、计算思维的概念和方法（核心）</strong></h3>
+<h3 id="section-2">三、计算思维的概念和方法（核心）</h3>
 <ul>
   <li>核心理念：像一个<code>计算机科学家</code>一样思考！</li>
   <li>计算模式思维：</li>
@@ -99,42 +99,12 @@
   <li>语言的三个维度：</li>
 </ul>
 
-<p><code>1.这个语言是一个高级还是低级的语言-----你能有多靠近机器的核心呢？</code></p>
-
 <blockquote>
   <ul>
-    <li><em><code>低级语言：曾经称之为假设编程，它只是出于用基本要素把一些数据碎片从记忆存储器的一个地方通过简单的操作来转到另外一个地方。</code></em></li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li><em><code>高级语言：设计者制造了丰富的原始要素</code></em></li>
-  </ul>
-</blockquote>
-
-<p><code>2.这个语言的目标群体是比较大众还是有特定面向群体的</code></p>
-
-<blockquote>
-  <ul>
-    <li><em><code>也就是说这个基本集合是不是支持比较多的程序或者是不是面向某一特定种类的程序的</code></em></li>
-  </ul>
-</blockquote>
-
-<p><code>3.这个语言是编译语言还是解释语言</code></p>
-
-<blockquote>
-  <ul>
-    <li><em><code>解释语言----需要写一些叫做源码的东西，你写的东西会经过一个简单的过滤器然后解释器会处理你的源码，解释器会产生一个逐条读取你源码的控制流，然后返回一个输出结果。因此解释器在运行程序的时候会直接的对你的代码进行操作。</code></em></li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li><em><code>编译语言----你会经过一个中间的步骤，在这种语言里输入源码后，先经过过滤器或者编译器检查后他会创建一个叫做目标代码的东西，这有两点好处:</code></em>
+    <li><code>1.这个语言是一个高级还是低级的语言-----你能有多靠近机器的核心呢？</code>
       <ul>
-        <li><em><code>1.可以帮助你发现程序中的bug</code></em></li>
-        <li><em><code>2.把你的代码在运行之前转换为更有效率的指令的集合</code></em></li>
+        <li><em><code>低级语言：曾经称之为假设编程，它只是出于用基本要素把一些数据碎片从记忆存储器的一个地方通过简单的操作来转到另外一个地方。</code></em></li>
+        <li><em><code>高级语言：设计者制造了丰富的原始要素</code></em></li>
       </ul>
     </li>
   </ul>
@@ -142,16 +112,37 @@
 
 <blockquote>
   <ul>
-    <li><em><code>解释语言和编译语言之间的区别：</code></em>
+    <li><code>2.这个语言的目标群体是比较大众还是有特定面向群体的</code>
       <ul>
-        <li><em><code>解释语言调试起来很容易，但是这种语言不够快</code></em></li>
-        <li><em><code>编译语言很快，但是调试起来麻烦</code></em></li>
+        <li><em><code>也就是说这个基本集合是不是支持比较多的程序或者是不是面向某一特定种类的程序的</code></em></li>
       </ul>
     </li>
   </ul>
 </blockquote>
 
-<h3 id="python"><strong>四、关于Python的一些简单介绍</strong></h3>
+<blockquote>
+  <ul>
+    <li><code>3.这个语言是编译语言还是解释语言</code>
+      <ul>
+        <li><em><code>解释语言----需要写一些叫做源码的东西，你写的东西会经过一个简单的过滤器然后解释器会处理你的源码，解释器会产生一个逐条读取你源码的控制流，然后返回一个输出结果。因此解释器在运行程序的时候会直接的对你的代码进行操作。</code></em></li>
+        <li><em><code>编译语言----你会经过一个中间的步骤，在这种语言里输入源码后，先经过过滤器或者编译器检查后他会创建一个叫做目标代码的东西，这有两点好处:</code></em>
+          <ul>
+            <li><em><code>1.可以帮助你发现程序中的bug</code></em></li>
+            <li><em><code>2.把你的代码在运行之前转换为更有效率的指令的集合</code></em></li>
+          </ul>
+        </li>
+        <li><em><code>解释语言和编译语言之间的区别：</code></em>
+          <ul>
+            <li><em><code>解释语言调试起来很容易，但是这种语言不够快</code></em></li>
+            <li><em><code>编译语言很快，但是调试起来麻烦</code></em></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="python">四、关于Python的一些简单介绍</h3>
 <ul>
   <li>python：高级语言、面向广泛、解释语言</li>
   <li>作为本课程的主打语言，我们需要为它建立“食谱”</li>

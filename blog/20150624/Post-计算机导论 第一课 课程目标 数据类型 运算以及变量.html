@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jia">
 
   
-  <meta name="description" content="一、课程目标 二、课程基本信息 三、计算思维的概念和方法（核心） 一、课程目标 了解计算在解决技术问题中所扮演的角色 使用计算思维的基本工具来编写小规模的代码（写） 使用计算工具的语言用来理解别人编写的程序（读） 了解计算的基本能力和局限以及他们的代价（知道你能干什么，不能干什么） &hellip;">
+  <meta name="description" content="一、课程目标 二、课程基本信息 三、计算思维的概念和方法（核心） 四、关于Python的一些简单介绍 一、课程目标 了解计算在解决技术问题中所扮演的角色 使用计算思维的基本工具来编写小规模的代码（写） 使用计算工具的语言用来理解别人编写的程序（读） 了解计算的基本能力和局限以及他们的代价（ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -162,6 +162,7 @@
   <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1"><strong>二、课程基本信息</strong></a></li>
   <li><a href="#section-2" id="markdown-toc-section-2"><strong>三、计算思维的概念和方法（核心）</strong></a></li>
+  <li><a href="#python" id="markdown-toc-python"><strong>四、关于Python的一些简单介绍</strong></a></li>
 </ul>
 
 <h3 id="section">一、课程目标</h3>
@@ -190,47 +191,182 @@
 <ul>
   <li>核心理念：像一个<code>计算机科学家</code>一样思考！</li>
   <li>计算模式思维：</li>
-  <li>什么是计算相关？</li>
   <li>什么是知识？</li>
 </ul>
 
 <blockquote>
   <ul>
-    <li><code>知识分为两种类型：</code></li>
+    <li><code>知识分为两种类型：</code>
+      <ul>
+        <li><code>1.陈述性的知识</code>
+          <ul>
+            <li><em><code>所谓陈述性的知识就是用叙述事实的方式来思考它。比如定理、原理等，它不会帮你计算，它顶多帮你检查正确性，对你的操作做标杆/参考。</code></em></li>
+          </ul>
+        </li>
+        <li><code>2.程序性的知识</code>
+          <ul>
+            <li><em><code>所谓程序性的知识就是对推论过程的描述，比如猜想、测试等，他会让你知道如何寻找定理/原理。它是方法，是关于怎么办的知识。</code></em></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>我怎么样才能建立计算机程序去捕捉一系列的计算呢?</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>1.用来解决某种专门的问题—固定程序式计算机，比如计算器、密码机等 </code></li>
   </ul>
 </blockquote>
 
 <blockquote>
-  <p><code>1.陈述性的知识</code></p>
+  <ul>
+    <li><code>2.用某种方法来实现想法的设备—存储程序式计算机 </code></li>
+  </ul>
 </blockquote>
 
 <blockquote>
-  <p><em><code>所谓陈述性的知识就是用叙述事实的方式来思考它。比如定理、原理等，它不会帮你计算，它顶多帮你检查正确性，对你的操作做标杆/参考。</code></em></p>
-</blockquote>
-
-<blockquote>
-  <p><code>2.程序性的知识</code></p>
-</blockquote>
-
-<blockquote>
-  <p><em><code>所谓程序性的知识就是对推论过程的描述，比如猜想、测试等，他会让你知道如何寻找定理/原理。它是方法，是关于怎么办的知识。</code></em></p>
+  <ul>
+    <li><code>3.计算机的核心：在初始指令序列上建造描述、方法的一个概念</code></li>
+  </ul>
 </blockquote>
 
 <ul>
-  <li>
-    <p>我怎么样才能建立计算机程序去捕捉一系列的计算呢?</p>
-
-    <p><code>1.用来解决某种专门的问题—固定程序式计算机，比如计算器、密码机等 </code></p>
-
-    <p><code>2.用某种方法来实现想法的设备—存储程序式计算机 </code></p>
-
-    <p><code>3.计算机的核心：在初始指令序列上建造描述、方法的一个概念</code></p>
-  </li>
-  <li>
-    <p>什么才是正确的基本类型？</p>
-  </li>
+  <li>语言的三个维度：</li>
 </ul>
 
+<p><code>1.这个语言是一个高级还是低级的语言-----你能有多靠近机器的核心呢？</code></p>
+
+<blockquote>
+  <ul>
+    <li><em><code>低级语言：曾经称之为假设编程，它只是出于用基本要素把一些数据碎片从记忆存储器的一个地方通过简单的操作来转到另外一个地方。</code></em></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em><code>高级语言：设计者制造了丰富的原始要素</code></em></li>
+  </ul>
+</blockquote>
+
+<p><code>2.这个语言的目标群体是比较大众还是有特定面向群体的</code></p>
+
+<blockquote>
+  <ul>
+    <li><em><code>也就是说这个基本集合是不是支持比较多的程序或者是不是面向某一特定种类的程序的</code></em></li>
+  </ul>
+</blockquote>
+
+<p><code>3.这个语言是编译语言还是解释语言</code></p>
+
+<blockquote>
+  <ul>
+    <li><em><code>解释语言----需要写一些叫做源码的东西，你写的东西会经过一个简单的过滤器然后解释器会处理你的源码，解释器会产生一个逐条读取你源码的控制流，然后返回一个输出结果。因此解释器在运行程序的时候会直接的对你的代码进行操作。</code></em></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em><code>编译语言----你会经过一个中间的步骤，在这种语言里输入源码后，先经过过滤器或者编译器检查后他会创建一个叫做目标代码的东西，这有两点好处:</code></em>
+      <ul>
+        <li><em><code>1.可以帮助你发现程序中的bug</code></em></li>
+        <li><em><code>2.把你的代码在运行之前转换为更有效率的指令的集合</code></em></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em><code>解释语言和编译语言之间的区别：</code></em>
+      <ul>
+        <li><em><code>解释语言调试起来很容易，但是这种语言不够快</code></em></li>
+        <li><em><code>编译语言很快，但是调试起来麻烦</code></em></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="python"><strong>四、关于Python的一些简单介绍</strong></h3>
+<ul>
+  <li>python：高级语言、面向广泛、解释语言</li>
+  <li>作为本课程的主打语言，我们需要为它建立“食谱”</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>得到问题然后将问题分解为计算步骤，这些指令集可以让我们看到这个过程</code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>为了达到这个目的，我们需要描述：包括程序基本的东西以及怎么在这种语言中做我们想做的事情并和计算机交互。</code>
+      <ul>
+        <li><code>语言的元素：</code>
+          <ul>
+            <li><em><code>1.语法与语义的区分：</code></em>
+              <ul>
+                <li><em><code>1.语法</code></em>
+                  <ul>
+                    <li><em><code>语法就是这个语言的合理表示是什么。语法会告诉你怎么把写好的表达式合理的放在一起描述</code></em></li>
+                  </ul>
+                </li>
+                <li><em><code>2.语义</code></em>
+                  <ul>
+                    <li><em><code>1.static的语义</code></em>
+                      <ul>
+                        <li><em><code>static的语义主要讲述哪些程序是有意义的，static的语义有助于帮助我们决定哪些表达哪部分的代码实际上是有意义的。</code></em></li>
+                      </ul>
+                    </li>
+                    <li><em><code>2.full的语义</code></em>
+                      <ul>
+                        <li><em><code>full的语义描述程序到底有什么意义或者说full的语义会告诉我们当我运行程序的时候会发生什么。</code></em></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code>程序的一些基本元素：</code>
+          <ul>
+            <li><em><code>1.数据类型：</code></em>
+              <ul>
+                <li><em><code>1.数字</code></em>
+                  <ul>
+                    <li><em><code>1.int（整型）</code></em></li>
+                    <li><em><code>2.float（浮点型）</code></em></li>
+                  </ul>
+                </li>
+                <li><em><code>2.字符串</code></em>
+                  <ul>
+                    <li><em><code>字符串格式：'abc'</code></em></li>
+                  </ul>
+                </li>
+                <li><em><code>3.运算符</code></em>
+                  <ul>
+                    <li><em><code>简单的+-*/</code></em></li>
+                  </ul>
+                </li>
+                <li><em><code>4.变量</code></em>
+                  <ul>
+                    <li><em><code>变量的作用就是把值存储起来。</code></em></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
 </div>
 
 
@@ -255,6 +391,18 @@
   
 </span>
 
+
+	  
+
+<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
+<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
+<IMG alt="" src="http://7xjw6q.com1.z0.glb.clouddn.com/JuliaJia半身照照片.JPG" width=90 height=100></DIV> 
+<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
+作者： <A href="http://www.juliajia.com/">JuliaJia</A> <BR> 
+出处： <A href="http://www.juliajia.com/">http://www.juliajia.com/</A> 
+<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
+署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
+<a href="http://www.juliajia.com/">JuliaJia</a>（包含链接）。 </DIV></DIV> 
 
       
 

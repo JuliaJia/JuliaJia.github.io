@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: introduction to computer | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/introduction-to-computer/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-06-28T18:08:58+08:00</updated>
+  <updated>2015-06-28T22:22:53+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -43,7 +43,7 @@
 
 <blockquote>
   <ul>
-    <li><code>运算对象分为以下三种类型</code>
+    <li>运算对象分为以下三种类型
       <ul>
         <li>数字类型
           <ul>

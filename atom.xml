@@ -4,7 +4,7 @@
   <title><![CDATA[JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-06-28T18:08:58+08:00</updated>
+  <updated>2015-06-28T22:22:53+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[从零开始建立自己的octopress博客(1)]]></title>
+    <link href="http://juliajia.github.io/blog/20150628/octopress-1.html"/>
+    <updated>2015-06-28T20:00:07+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150628/octopress-1</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【计算机导论】第二课 条件分支语句和循环语句]]></title>
@@ -43,7 +52,7 @@
 
 <blockquote>
   <ul>
-    <li><code>运算对象分为以下三种类型</code>
+    <li>运算对象分为以下三种类型
       <ul>
         <li>数字类型
           <ul>

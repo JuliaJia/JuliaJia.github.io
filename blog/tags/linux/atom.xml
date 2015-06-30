@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Linux | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/linux/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-06-30T16:34:47+08:00</updated>
+  <updated>2015-06-30T16:37:58+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[saltstack-01]]></title>
+    <title type="html"><![CDATA[saltstack初步安装与部署]]></title>
     <link href="http://juliajia.github.io/blog/20150630/saltstack-01.html"/>
     <updated>2015-06-30T16:30:42+08:00</updated>
     <id>http://juliajia.github.io/blog/20150630/saltstack-01</id>
@@ -41,7 +41,8 @@
       <ul>
         <li>CentOS6-64bit：
           <ul>
-            <li>yum -y install salt-master</li>
+            <li>yum -y install salt-master
+<!--more--></li>
           </ul>
         </li>
       </ul>

@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://juliajia.github.io/sitemap.xml 

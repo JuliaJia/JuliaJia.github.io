@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag: saltstack | JuliaJia's coder paradise]]></title>
-  <link href="http://www.juliajia.com/blog/tags/saltstack/atom.xml" rel="self"/>
-  <link href="http://www.juliajia.com/"/>
-  <updated>2015-06-30T12:19:26+08:00</updated>
-  <id>http://www.juliajia.com/</id>
+  <link href="http://juliajia.github.io/blog/tags/saltstack/atom.xml" rel="self"/>
+  <link href="http://juliajia.github.io/"/>
+  <updated>2015-06-30T16:34:47+08:00</updated>
+  <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
     
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[saltstack安装与部署]]></title>
-    <link href="http://www.juliajia.com/blog/20150630/saltstack-01.html"/>
-    <updated>2015-06-30T12:17:42+08:00</updated>
-    <id>http://www.juliajia.com/blog/20150630/saltstack-01</id>
+    <title type="html"><![CDATA[saltstack-01]]></title>
+    <link href="http://juliajia.github.io/blog/20150630/saltstack-01.html"/>
+    <updated>2015-06-30T16:30:42+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150630/saltstack-01</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#saltstack-master" id="markdown-toc-saltstack-master">一、saltstack-master服务器安装</a></li>
   <li><a href="#saltstack-minion" id="markdown-toc-saltstack-minion">二、saltstack-minion服务器安装</a></li>

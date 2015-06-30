@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Tag: CentOS6.5-64bit | JuliaJia's coder paradise]]></title>
-  <link href="http://juliajia.github.io/blog/tags/centos6-dot-5-64bit/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Devops | JuliaJia's coder paradise]]></title>
+  <link href="http://juliajia.github.io/blog/categories/devops/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
   <updated>2015-06-30T16:34:47+08:00</updated>
   <id>http://juliajia.github.io/</id>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[saltstack-01]]></title>
+    <title type="html"><![CDATA[Saltstack-01]]></title>
     <link href="http://juliajia.github.io/blog/20150630/saltstack-01.html"/>
     <updated>2015-06-30T16:30:42+08:00</updated>
     <id>http://juliajia.github.io/blog/20150630/saltstack-01</id>

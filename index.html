@@ -9,7 +9,7 @@
   <meta name="author" content="Julia Jia">
 
   
-  <meta name="description" content="一、前提说明 二、基本配置的修改 一、前提说明 git bash在octopress目录下操作 所有文件必须是UTF8不带BOM格式的！可以使用notepad++进行转换。 以后我们将把octopress目录称为根（/）目录 //后面的内容表示注释 后面的步骤里如没有特殊说明将参照以上说明 二、 &hellip;">
+  <meta name="description" content=" 一、前提说明 二、基本配置的修改 一、前提说明 git bash在octopress目录下操作 所有文件必须是UTF8不带BOM格式的！可以使用notepad++进行转换。 以后我们将把octopress目录称为根（/）目录 //后面的内容表示注释 后面的步骤里如没有特殊说明将参照以上说明 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -180,158 +180,12 @@
   </ul>
 </blockquote>
 
-<h3 id="section-1">二、基本配置的修改</h3>
-<blockquote>
-  <ul>
-    <li>1.修改域名、作者以及网站标题
-      <ul>
-        <li>修改配置文件/_config.yml
-          <ul>
-            <li>url: http://www.juliajia.com        //这里填写你的站点地址也就是域名</li>
-            <li>title: JuliaJia’s coding paradise    //这里填写你站点的名称</li>
-            <li>subtitle: 凤凰涅槃，三年不飞三年不鸣，要飞一飞冲天，要鸣一鸣惊人！      //这里填写站点的描述，但是一般大家都喜欢写喜欢的名言或者自己的志向</li>
-            <li>author: Julia Jia     //这里写站点的作者或者说博主姓名</li>
-            <li>keywords: 编程 大数据 算法 python C C++ 机器学习 深度学习 hadoop spark JAVA scala  //这里填写你这个站点的关键字，方便搜索引擎来爬。</li>
-            <li>description: 这里是JuliaJia的禅修之地，主要潜心研究机器学习、深度学习以及大数据有关的所有技术，也写一些自己的感悟体会和生活趣事儿。   //对这个博客站点进行简单的描述，这里的内容也是给搜索引擎看的。</li>
-            <li>这里需要注意的是，所有的冒号必须是英文冒号，并且冒号后面一定要有一个空格！切记！</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>2.修改文章链接形式
-      <ul>
-        <li>修改配置文件/_config.yml
-          <ul>
-            <li>permalink: /blog/:year:month:day/:title.html       //这里填写博客页面的web链接格式</li>
-            <li>这么修改了以后页面链接就不会显得层级很多了</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>3.修改markdown文件后缀
-      <ul>
-        <li>octopress默认日志文件的后缀是markdown，我们可以修改配置文件让这个后缀更简短一些，还能针对文件的不同用途设定不同的后缀</li>
-        <li>修改配置文件/rakefile
-          <ul>
-            <li>new_post_ext = “md”      //设置post文件后缀为md</li>
-            <li>new_page_ext = ‘html’    //设置page文件后缀为html</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>4.修改默认markdown解释器
-      <ul>
-        <li>修改配置文件/Gemfile
-          <ul>
-            <li>在文件末尾添加一行：
-              <ul>
-                <li>gem ‘kramdown’</li>
-              </ul>
-            </li>
-            <li>然后在git bash中执行命令：
-              <ul>
-                <li>bundle install</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>修改配置文件/_config.yml
-          <ul>
-            <li>把以下内容删除：
-              <ul>
-                <li>markdown: rdiscount</li>
-                <li>rdiscount:
-                  <ul>
-                    <li>extensions:
-                      <ul>
-                        <li>autolink</li>
-                        <li>footnotes</li>
-                        <li>smart</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>然后再添加下面这句话：
-              <ul>
-                <li>markdown: kramdown</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>5.添加MathJax支持
-      <ul>
-        <li>修改配置文件/source/_includes/custom/head.html
-          <ul>
-            <li>添加如下代码</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>head.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="c">&lt;!-- MathJax --&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
-</span><span class="line">      <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">  <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
-</span><span class="line">      <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class="line">        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">            <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">&#39; has-jax&#39;</span><span class="p">;</span>
-</span><span class="line">        <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>
-</span><span class="line">   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>至此，博客的基本配置就完成了，当然离最终的样子还差很多，不过饭要一口一口的吃，事儿要一件一件的做，我们下一篇开始讲解导航栏和侧边栏的定制。</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/20150701/octopress-02.html">Read On &rarr;</a>
+    </footer>
   
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: octopress | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/octopress/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-01T12:25:39+08:00</updated>
+  <updated>2015-07-01T15:35:24+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -12,6 +12,154 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[【从零开始部署octopress系列之二】octopress定制化部署(1)]]></title>
+    <link href="http://juliajia.github.io/blog/20150701/octopress-02.html"/>
+    <updated>2015-07-01T15:33:48+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150701/octopress-02</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、前提说明</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、基本配置的修改</a></li>
+</ul>
+
+<h3 id="section">一、前提说明</h3>
+<blockquote>
+  <ul>
+    <li>git bash在octopress目录下操作</li>
+    <li>所有文件必须是UTF8不带BOM格式的！可以使用notepad++进行转换。</li>
+    <li>以后我们将把octopress目录称为根（/）目录</li>
+    <li>//后面的内容表示注释</li>
+    <li>后面的步骤里如没有特殊说明将参照以上说明</li>
+  </ul>
+</blockquote>
+
+<h3 id="section-1">二、基本配置的修改</h3>
+<blockquote>
+  <ul>
+    <li>1.修改域名、作者以及网站标题
+      <ul>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>url: http://www.juliajia.com        //这里填写你的站点地址也就是域名</li>
+            <li>title: JuliaJia’s coding paradise    //这里填写你站点的名称</li>
+            <li>subtitle: 凤凰涅槃，三年不飞三年不鸣，要飞一飞冲天，要鸣一鸣惊人！      //这里填写站点的描述，但是一般大家都喜欢写喜欢的名言或者自己的志向</li>
+            <li>author: Julia Jia     //这里写站点的作者或者说博主姓名</li>
+            <li>keywords: 编程 大数据 算法 python C C++ 机器学习 深度学习 hadoop spark JAVA scala  //这里填写你这个站点的关键字，方便搜索引擎来爬。</li>
+            <li>description: 这里是JuliaJia的禅修之地，主要潜心研究机器学习、深度学习以及大数据有关的所有技术，也写一些自己的感悟体会和生活趣事儿。   //对这个博客站点进行简单的描述，这里的内容也是给搜索引擎看的。</li>
+            <li>这里需要注意的是，所有的冒号必须是英文冒号，并且冒号后面一定要有一个空格！切记！</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>2.修改文章链接形式
+      <ul>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>permalink: /blog/:year:month:day/:title.html       //这里填写博客页面的web链接格式</li>
+            <li>这么修改了以后页面链接就不会显得层级很多了</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>3.修改markdown文件后缀
+      <ul>
+        <li>octopress默认日志文件的后缀是markdown，我们可以修改配置文件让这个后缀更简短一些，还能针对文件的不同用途设定不同的后缀</li>
+        <li>修改配置文件/rakefile
+          <ul>
+            <li>new_post_ext = “md”      //设置post文件后缀为md</li>
+            <li>new_page_ext = ‘html’    //设置page文件后缀为html</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>4.修改默认markdown解释器
+      <ul>
+        <li>修改配置文件/Gemfile
+          <ul>
+            <li>在文件末尾添加一行：
+              <ul>
+                <li>gem ‘kramdown’</li>
+              </ul>
+            </li>
+            <li>然后在git bash中执行命令：
+              <ul>
+                <li>bundle install</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>把以下内容删除：
+              <ul>
+                <li>markdown: rdiscount</li>
+                <li>rdiscount:
+                  <ul>
+                    <li>extensions:
+                      <ul>
+                        <li>autolink</li>
+                        <li>footnotes</li>
+                        <li>smart</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>然后再添加下面这句话：
+              <ul>
+                <li>markdown: kramdown</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>5.添加MathJax支持
+      <ul>
+        <li>修改配置文件/source/_includes/custom/head.html
+          <ul>
+            <li>添加如下代码
+<code>html head.html
+&lt;!-- MathJax --&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+processEscapes: true
+  }
+});
+&lt;/script&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+  MathJax.Hub.Config({
+tex2jax: {
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+}
+  });
+&lt;/script&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+  MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i &lt; all.length; i += 1) {
+  all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+  });
+&lt;/script&gt;
+&lt;script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;
+&lt;/script&gt;
+</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>至此，博客的基本配置就完成了，当然离最终的样子还差很多，不过饭要一口一口的吃，事儿要一件一件的做，我们下一篇开始讲解导航栏和侧边栏的定制。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【从零开始部署octopress系列之一】octopress安装与部署]]></title>

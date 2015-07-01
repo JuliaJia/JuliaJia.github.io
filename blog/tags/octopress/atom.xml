@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: octopress | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/octopress/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-01T12:16:31+08:00</updated>
+  <updated>2015-07-01T12:25:39+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -20,7 +20,7 @@
     <id>http://juliajia.github.io/blog/20150630/octopress-01</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、写这个系列的起因</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">二、部署之需要做的事情</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、部署之前需要做的事情</a></li>
   <li><a href="#octopress" id="markdown-toc-octopress">三、octopress安装与部署</a></li>
 </ul>
 
@@ -33,7 +33,7 @@
 
 <p>介于我折腾的如此痛苦（部署期间我翻阅了各种跟octopress相关的博客，但是要么写的不全面，要么是在MAC下或者linux下的部署步骤不适合windows，要么插件按照他写的步骤完全没法用—年代久远等因素），所以我想把我折腾的整个过程总结出来，写一个全面的系列，这样一来方便我自己后续查阅，二来给后面用octopress的人一个参考，你按照我的步骤去做就能做出我现在博客的样子，省去了很多折腾的时间（虽然折腾的过程也很有乐趣，嘿嘿）以上就是我为什么要写这个系列的原因。</p>
 
-<h3 id="section-1">二、部署之需要做的事情</h3>
+<h3 id="section-1">二、部署之前需要做的事情</h3>
 
 <blockquote>
   <ul>

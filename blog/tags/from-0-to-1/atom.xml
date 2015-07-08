@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: from 0 to 1 | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/from-0-to-1/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-01T17:39:42+08:00</updated>
+  <updated>2015-07-08T20:55:28+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -12,6 +12,255 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君读书笔记系列之一】Programming in C：第一至第四章（理论笔记）]]></title>
+    <link href="http://juliajia.github.io/blog/20150708/programming-in-c-01.html"/>
+    <updated>2015-07-08T20:39:12+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150708/programming-in-c-01</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、入门</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、基础知识</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三、编译并运行第一个程序</a></li>
+  <li><a href="#include-stdioh" id="markdown-toc-include-stdioh">include <stdio.h></stdio.h></a></li>
+  <li><a href="#include-stdioh-1" id="markdown-toc-include-stdioh-1">include <stdio.h></stdio.h></a>    <ul>
+      <li><a href="#section-3" id="markdown-toc-section-3">四、变量、数据类型和算数表达式</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section">一、入门</h3>
+<blockquote>
+  <ul>
+    <li>1.学习C需要尽可能多的去实验</li>
+    <li>2.代码可读性很重要</li>
+  </ul>
+</blockquote>
+
+<h3 id="section-1">二、基础知识</h3>
+<blockquote>
+  <ul>
+    <li>1.程序设计
+      <ul>
+        <li>1.计算机系统能够执行的基本指令的集合，我们称之为计算机的指令集</li>
+        <li>2.用来解决某个具体问题的计算机指令集和，我们称之为计算机程序</li>
+        <li>3.用来解决某个具体问题的方法，我们称之为算法</li>
+        <li>4.使用计算机解决制定问题的流程是：
+          <ul>
+            <li>step 1：找到解决该问题的方法，也就是找到算法</li>
+            <li>step 2：在用一段计算机程序去表达/实现这个算法</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>2.高级编程语言
+      <ul>
+        <li>1.使用高级编程语言，我们不再需要了解具体计算机系统的结构。</li>
+        <li>2.高级编程语言可移植性高</li>
+        <li>3.高级编程语言需要编译器—一个用来将高级编程语言编写的程序翻译成特定计算机系统能理解的机器指令的程序。</li>
+      </ul>
+    </li>
+    <li>3.操作系统
+      <ul>
+        <li>1.操作系统被用来控制计算机系统所有操作的程序</li>
+        <li>2.操作系统必须管理计算机的所有资源并负责运行所有的程序</li>
+      </ul>
+    </li>
+    <li>4.编译程序
+      <ul>
+        <li>1.编译程序的基本步骤：
+          <ul>
+            <li>step 1：用文本编辑器将C语言编写的程序输入到计算机系统的文件中。</li>
+            <li>step 2：使用gcc prog1.c的命令告诉计算机开始编译</li>
+            <li>step 3：编译器收到编译指示后，它首先检查源程序的每一条语句，看他是否符合语言的语法和词法。如果有错误，编译器会报错给用户并停止运行。</li>
+            <li>step 4：如果编译器没有发现任何的语法和词法的错误，它将会把高级编程语言编写的源程序翻译为较低级的形式—汇编语言程序</li>
+            <li>step 5：然后再将汇编语言程序翻译为实际的机器指令并生成目标文件（通常.o结尾）</li>
+            <li>step 6：生成目标文件以后编译器会执行连接（连接的主要作用是将目标代码转化为具体的计算机系统上实际的可执行程序）的操作</li>
+            <li>step 7：连接器会把刚刚生成的可执行代码保存在系统的可执行文件中（通常.out结尾）
+  至此编译程序的完整流程就走完了</li>
+          </ul>
+        </li>
+        <li>2.程序运行时，计算机会按照顺序执行程序中的指令，除非遇到中止/挂起等指令。</li>
+      </ul>
+    </li>
+    <li>5.解释型语言
+      <ul>
+        <li>1.python就是一门典型的解释型语言</li>
+        <li>2.解释型语言没有编译器只有解释器，它通过解释器一边分析源程序一边执行。因此解释型程序会比编译型程序执行得慢，但是解释型语言调试起来容易一些。</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-2">三、编译并运行第一个程序</h3>
+<blockquote>
+  <ul>
+    <li>1.万年“Hello World!”
+``` c prog1.c</li>
+  </ul>
+</blockquote>
+
+<h1 id="include-stdioh">include <stdio.h></stdio.h></h1>
+
+<p>int main(void)
+{
+    printf(“Hello World!\n”);</p>
+
+<pre><code>return 0; } ```
+</code></pre>
+
+<blockquote>
+  <ul>
+    <li>2.编译prog1.c
+      <ul>
+        <li>gcc prog1.c -o prog1</li>
+      </ul>
+    </li>
+    <li>3.运行prog1
+      <ul>
+        <li>prog1</li>
+      </ul>
+    </li>
+    <li>4.prog1代码解析
+      <ul>
+        <li>1.#include <stdio.h>
+</stdio.h>          <ul>
+            <li>stdio.h是标准输入输出头文件，里面有很多已经编写好的标准函数提供给程序员使用，有点像python的模块。</li>
+          </ul>
+        </li>
+        <li>2.int main(void)
+          <ul>
+            <li>定义了一个名为main的函数（在C语言中，main就是主函数），并定义了这个函数的type是整型。</li>
+          </ul>
+        </li>
+        <li>3.{}
+          <ul>
+            <li>C语言通过{}来表明函数块范围。</li>
+          </ul>
+        </li>
+        <li>4.void
+          <ul>
+            <li>表示函数main不需要任何参数</li>
+          </ul>
+        </li>
+        <li>5.printf();
+          <ul>
+            <li>printf函数是C语言的一个标准库函数，这个函数把传递给它的参数打印到屏幕上。</li>
+            <li>\n是换行符</li>
+          </ul>
+        </li>
+        <li>6.return 0;
+          <ul>
+            <li>表示函数结束并返回一个0值作为结束状态。</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>5.显示变量的值
+      <ul>
+        <li>1.prog2代码解析
+          <ul>
+            <li>1.int a;
+              <ul>
+                <li>定义一个名为a的整型变量</li>
+              </ul>
+            </li>
+            <li>2.a = 50 + 25;
+              <ul>
+                <li>这个表达式的含义是给变量a赋值</li>
+              </ul>
+            </li>
+            <li>3.%i
+              <ul>
+                <li>%i表示这里使用一个整型的变量值，变量值由,号后面的参数提供。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>``` c prog2.c</p>
+
+<h1 id="include-stdioh-1">include <stdio.h></stdio.h></h1>
+<p>int main(void)
+{
+    int a;
+    a = 50 + 25;
+    printf(“The sum of 50 and 25 is %i\n”, a);</p>
+
+<pre><code>return 0; } ```
+</code></pre>
+
+<blockquote>
+  <ul>
+    <li>6.注释
+      <ul>
+        <li>1./<em>我是注释</em>/
+          <ul>
+            <li>我能换行注释</li>
+          </ul>
+        </li>
+        <li>2.//我也是注释
+          <ul>
+            <li>我只能单行注释</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-3">四、变量、数据类型和算数表达式</h3>
+<blockquote>
+  <ul>
+    <li>1.使用变量
+      <ul>
+        <li>1.合法的变量名
+          <ul>
+            <li>1.字母或下划线开头</li>
+            <li>2.由字母、下划线以及数字0-9组成</li>
+            <li>3.不能使用保留关键字</li>
+          </ul>
+        </li>
+        <li>2.最好使用有意义的长短合适的变量名</li>
+      </ul>
+    </li>
+    <li>2.数据类型与常量
+      <ul>
+        <li>1.整型—int（%i）
+          <ul>
+            <li>1.long—长整型（目前为止long int跟int其实没有差别都是32位）</li>
+            <li>2.long long—超长整型支持64位</li>
+            <li>3.short—短整型（16位以上）
+              <ul>
+                <li>short整型没有常量表达式，只能通过普通整型数的格式化输入符号前面放一个字母h，比如%hi来进行输出。（了解即可，这种东西现在完全没用武之地。。。。）</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>2.其他数据类型—float/double/char/_bool
+          <ul>
+            <li>1.float—用来储存浮点数（%g）</li>
+            <li>2.double—-用来储存双精度浮点数（%g）</li>
+            <li>3.char—-用来储存单个字符（%c）</li>
+            <li>4._bool—用来储存布尔值（i%）</li>
+          </ul>
+        </li>
+        <li>3.常量
+          <ul>
+            <li>在C语言中，任何数字，单个字符或者字符串都被看作是常量。
+书里面做了一个很有意思的数据类型实验，等实验篇的时候我们来详细的看一看！</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【从零开始部署octopress系列之二】octopress定制化部署(1)]]></title>

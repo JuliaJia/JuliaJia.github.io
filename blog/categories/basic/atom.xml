@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Basic | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/categories/basic/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-08T20:55:28+08:00</updated>
+  <updated>2015-07-08T20:57:08+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -48,7 +48,8 @@
         <li>4.使用计算机解决制定问题的流程是：
           <ul>
             <li>step 1：找到解决该问题的方法，也就是找到算法</li>
-            <li>step 2：在用一段计算机程序去表达/实现这个算法</li>
+            <li>step 2：在用一段计算机程序去表达/实现这个算法
+<!--more--></li>
           </ul>
         </li>
       </ul>

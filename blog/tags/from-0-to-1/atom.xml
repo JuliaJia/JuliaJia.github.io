@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: from 0 to 1 | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/from-0-to-1/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-10T15:17:58+08:00</updated>
+  <updated>2015-07-10T17:29:31+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -12,6 +12,314 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法]]></title>
+    <link href="http://juliajia.github.io/blog/20150710/python-flask-02.html"/>
+    <updated>2015-07-10T15:21:59+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150710/python-flask-02</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、应用模板的简单案例</a></li>
+  <li><a href="#jinja2" id="markdown-toc-jinja2">二、jinja2的控制语句</a></li>
+  <li><a href="#jinja2-1" id="markdown-toc-jinja2-1">三、jinja2的循环语句</a></li>
+  <li><a href="#jinja2-2" id="markdown-toc-jinja2-2">四、jinja2的模板继承属性</a></li>
+</ul>
+
+<h3 id="section">一、应用模板的简单案例</h3>
+<blockquote>
+  <ul>
+    <li>1.如果没有模板会怎样？
+我们之前已经部署好了python-flask的基础开发环境并成功的完成了万里长征第一步：万年Hello World的展示。不过我们学习python-flask可不是仅仅只是为了展示Hello World的，所以我们会美观我们的页面我们会设置很多页面属性，所以当我们想对这个程序做扩展的时候，我们会这样做：
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>   <span class="c">#fake user</span>
+</span><span class='line'>  <span class="k">return</span> <span class="err">‘’’</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Home</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Hello</span><span class="p">,</span><span class="s">&#39;&#39;&#39; + user[&#39;nickname&#39;] + &#39;&#39;&#39;</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">’’’</span>
+</span></code></pre></td></tr></table></div></figure>
+<!--more-->
+保存退出以后再刷新一下浏览器，你应该可以看到Hello，Miguel出现，并且标题是Home Page！先别太激动哦，这还只是简单的一点小小的改动，现在想象一下，如果我们需要写各种复杂的页面的时候，它们跟应用程序代码挤在一起岂不是要乱成粥了？光是想想头就莫名开始痛起来，因此不把网页代码跟应用程序分开是不行的，而且你也不希望把前端网页工程师的工作也做了吧^_^！因此python-flask设计者设计出了模板，我们接下来看看我们使用模板的话，刚才的代码是怎样的！</p>
+
+<blockquote>
+  <ul>
+    <li>2.如何使用模板
+首先我们来写一个模板，代码如下：</li>
+  </ul>
+</blockquote>
+
+<p>注意：由于博客不支持jinja2的代码所以我这边只能靠截图来展现代码了！</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-01.png" title="Stupid ET #2" ></p>
+
+<p>聪明的你一定发现了，除了和以外这段代码跟刚刚我们添加到view.py里的没什么太大的区别！没错，其实这两个也不陌生，它们就是变量！那么它们的值是什么呢？？？？别急，我们接下来看看view.py
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>    <span class="c">#  fake user</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="err">“</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Home</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+这里跟刚才不同的地方就在于render_template函数的引入，这是个什么东东呢？其实说白了就是基于你模板名称以及设定的变量信息，他帮你完成替换工作，现在你明白刚刚那两个变量有什么用了吧！（需要注意的是，在内部，其实render_template调用了jinja2模板引擎的，由jinja2来做替换工作）</p>
+
+<h3 id="jinja2">二、jinja2的控制语句</h3>
+<p>讲到模板就不得不提jinja2，那么什么是jinja2呢？我搜索了一下，绝大部分介绍jinja2的都说它是仿照Django模板的python模板语言，看到这里什么是django？什么是模板语言？等等这些问题都涌了出来，不过我们这个系列是写python-flask的，所以不可以发散那么远，等以后有精力了，再去好好研究一下jinja2和django！</p>
+
+<p>言归正传，我们来看看这个类Django的python模板语言—-Jinja2是如何去做控制的，我先提出一个问题，如果之前的代码里我少提供了一个变量会怎样？你一定会说，肯定会报错啊！没错，稍微有点开发经验的人都能猜到程序会报错，那么这段代码岂不是很死板，就不能智能的判断吗？如果用户没有提供就让程序使用默认字段代替呗！这里有个字眼—“判断”，呵呵，听到这个词，明显就是需要用到控制语句了，因此解决刚刚所说的问题解决办法就出来了，利用jinja2的控制语句进行判断何时执行默认的操作，代码如下：</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-02.png" title="Stupid ET #2" ></p>
+
+<p>保存代码（代码我就不解释了吧，如此清晰的语法，连我这种刚开始学习代码的二把刀都能看明白，我相信大家都能看明白是怎么回事儿）之后咱们去view.py把title参数给删除并运行run.py，看看是否会报错，最后刷新页面看看是否显示咱们指定的默认title了，如果你发现成功了的话，你可以想想如果user.nickname参数没有提供怎么办呢？动起手来改造一下，感受一下吧！！！！</p>
+
+<h3 id="jinja2-1">三、jinja2的循环语句</h3>
+<p>既然讲了控制，自然会讲到循环（为什么我要这么说，我也不知道，可能是最近看MIT的计算机导论课程看多了的关系吧！！原谅我吧！），循环顾名思义它就是一个环，只有满足指定条件它才会被打破，你可以想象你在跑圈，然后你给自己定义跑3圈停下，那么3圈就是指定条件（这个比喻形象吗？）！</p>
+
+<p>看到这里很多人会觉得这玩意儿有什么用呢？我其实也不太懂，我一般只拿它来做遍历（我经常跟别人说我写过一个特别操蛋的程序，就是分布式的层层循环的去ping一万+的服务器来测试他们是否存活，原因嘛很简单，一次ping出来的结果往往是不准的，只有不断的去ping然后层层过滤ping不同的列表才是真正的ping不通的服务器，是不是很操蛋。。。。。），无论是遍历字典还是遍历列表还是遍历文件生成列表，所以我隐隐记得有大神说过算法牛逼的程序循环是非常少的（可能是我精分癌发作记错-_-d）！</p>
+
+<p>我感觉我跑题了！！！！赶紧把思绪拉回来！！！！我们继续研究jinja2的循环语句，不管这个东西怎样，存在即合理，我们就要学习它！不为别的，就为把妹的时候也能多一点谈资（我感觉我好low ⊙ o ⊙ ）！要用到jinja2的循环我们必须改造一下我们的view.py脚本：
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>    <span class="c">#  fake user</span>
+</span><span class='line'>    <span class="n">posts</span> <span class="o">=</span> <span class="p">[</span> <span class="c"># fake array of posts</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">author</span><span class="err">’</span><span class="p">:</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">John</span><span class="err">’</span> <span class="p">},</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">body</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Beautiful</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">Portland</span><span class="err">!’</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">author</span><span class="err">’</span><span class="p">:</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Susan</span><span class="err">’</span> <span class="p">},</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">body</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">The</span> <span class="n">Avengers</span> <span class="n">movie</span> <span class="n">was</span> <span class="n">so</span> <span class="n">cool</span><span class="err">!’</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">]</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="err">“</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Home</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">posts</span> <span class="o">=</span> <span class="n">posts</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+心细的你一定发现了，这里多了个posts，它是个列表里面有两个字典元素，但是循环在哪呢？？？？别急别急嘛！刚刚我不是说过了么，我一般拿循环就是遍历个字典啊列表神马的，所以说我们要先给循环准备遍历的素材嘛！现在素材准备好了，我们可以开始写循环了：</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-03.png" title="Stupid ET #2" ></p>
+
+<p>代码完成！现在把目光聚集到之间的那句代码，通过for循环遍历了posts列表里的元素（其实就两个），然后取出这两个元素的key_value（因为这两个元素是字典），最后利用key_value组合成一句话：某某人说了某某话，所以大家可以猜到显示结果就是John和Susan分别在屏幕上说了两句屁话。。。。至此简单的循环就介绍得差不多了，想要知道高级用法，第一手段：google 第二手段：百度 第三手段：等我学到那里吧！</p>
+
+<h3 id="jinja2-2">四、jinja2的模板继承属性</h3>
+<p>不知道你们有没有发现我们有好多代码都是重复利用的，难道我们每写一个页面都要复制粘贴吗？NO！我们这么聪（shu）明(lan)机（cheng）智（xing）的人怎么能容忍这些重复操作呢！设计jinja2的大牛们也和你我一样，因此他们就搞了个模板继承的属性，让重复利用的代码单独做个模板，想要用的时候继承一下就好了，这种充（lan）满（ai）智（huan）慧（zhe）结（fu）晶（yin）的工具我们怎么能不会呢？下面我们就来看个栗子：
+背景介绍：我们需要做一个导航栏，然后希望这个导航栏呢，在每个模板中都使用父模板（请允许我这样叫它）代码如下：</p>
+
+<p>emacs app/templates/base.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-04.png" title="Stupid ET #2" ></p>
+
+<blockquote>
+  <ul>
+    <li>可以看到插入父模板只需要两个步骤：
+      <ul>
+        <li>step 1：告知父模板的名字</li>
+        <li>step 2：用定义好的block包裹该页面代码即可（这里的页面代码指的是唯一的、不需要重复利用的）</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>至此python-flask模板的一些使用方法和jinja2的一些简单语法我们就搞完了，下篇我们将学习flask-wtf表单，敬请期待！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World!]]></title>
+    <link href="http://juliajia.github.io/blog/20150710/python-flask-01.html"/>
+    <updated>2015-07-10T15:21:13+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150710/python-flask-01</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#python-flask" id="markdown-toc-python-flask">一、部署python-flask的环境</a></li>
+  <li><a href="#python-flask-1" id="markdown-toc-python-flask-1">二、部署python-flask基本环境</a></li>
+  <li><a href="#hello-world" id="markdown-toc-hello-world">三、Hello World</a></li>
+</ul>
+
+<h3 id="python-flask">一、部署python-flask的环境</h3>
+<blockquote>
+  <ul>
+    <li>操作系统：Ubuntu14.04-64bit</li>
+    <li>编辑器：Emacs24.3</li>
+    <li>Python版本：2.7
+<!--more--></li>
+  </ul>
+</blockquote>
+
+<h3 id="python-flask-1">二、部署python-flask基本环境</h3>
+<blockquote>
+  <ul>
+    <li>1.部署flask的基础环境
+      <ul>
+        <li>sudo apt-get install python-virtualenv     //安装python的虚拟环境</li>
+        <li>mkdir /data/python-flask</li>
+        <li>cd /data/python-flask</li>
+        <li>virtualenv flask    //构建flask虚拟环境</li>
+      </ul>
+    </li>
+    <li>2.安装flask和flask的扩展：
+      <ul>
+        <li>flask/bin/pip install flask</li>
+        <li>flask/bin/pip install flask-login</li>
+        <li>flask/bin/pip install flask-openid</li>
+        <li>flask/bin/pip install flask-mail</li>
+        <li>flask/bin/pip install flask-sqlalchemy</li>
+        <li>flask/bin/pip install sqlalchemy-migrate</li>
+        <li>flask/bin/pip install flask-whooshalchemy</li>
+        <li>flask/bin/pip install flask-wtf</li>
+        <li>flask/bin/pip install flask-babel</li>
+        <li>flask/bin/pip install guess_language</li>
+        <li>flask/bin/pip install flipflop</li>
+        <li>flask/bin/pip install coverage</li>
+      </ul>
+    </li>
+    <li>3.创建web开发文件夹：
+      <ul>
+        <li>mkdir app</li>
+        <li>mkdir app/static</li>
+        <li>mkdir app/templates</li>
+        <li>mkdir tmp</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="hello-world">三、Hello World</h3>
+<blockquote>
+  <ul>
+    <li>1.创建一个简单的初始化脚本__init__.py
+<figure class='code'><figcaption><span>app/<strong>init</strong>.py</li></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">)</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">2.</span><span class="err">创建一个视图函数脚本</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">return</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">!”</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">3.</span><span class="err">创建启动</span><span class="n">WEB</span><span class="err">服务器的脚本</span><span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">python</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">flask</span><span class="o">/</span><span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="c">#!flask/bin/python</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+&gt; * 4.给这个启动脚本添加可执行权限
+&gt;     * chmod a+x run.py</p>
+
+<blockquote>
+  <ul>
+    <li>5.执行这个启动脚本
+      <ul>
+        <li>./run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>成功执行启动脚本以后就可以用浏览器访问http://localhost:5000，然后就能看到Hello World啦！这样简单的python-flask就部署完毕了。下一篇我们将学习python-flask的模板用法以及一些简单的jinja2的语法，敬请期待！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）]]></title>
@@ -838,177 +1146,6 @@ tex2jax: {
 </blockquote>
 
 <p>至此，博客的基本配置就完成了，当然离最终的样子还差很多，不过饭要一口一口的吃，事儿要一件一件的做，我们下一篇开始讲解导航栏和侧边栏的定制。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【从零开始部署octopress系列之一】octopress安装与部署]]></title>
-    <link href="http://juliajia.github.io/blog/20150630/octopress-01.html"/>
-    <updated>2015-06-30T16:43:07+08:00</updated>
-    <id>http://juliajia.github.io/blog/20150630/octopress-01</id>
-    <content type="html"><![CDATA[<ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">一、写这个系列的起因</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">二、部署之前需要做的事情</a></li>
-  <li><a href="#octopress" id="markdown-toc-octopress">三、octopress安装与部署</a></li>
-</ul>
-
-<h3 id="section">一、写这个系列的起因</h3>
-<p>接触octopress是源于一直以来我就想有个自己的博客，但是一直不想四处找稳定的空间（X宝的坑太多，国外的太贵）所以也就作罢，直到后来偶然在知乎上搜到一篇文章里面讲到如何利用github建立自己的博客，我多年想建个人博客的愿望又被激了起来，于是乎就开始了漫长的折腾。</p>
-
-<p>起先本来是用hexo不过我不喜欢那样的feel，当然萝卜青菜各有所爱，hexo有它自身的优势只不过我不喜欢罢了，后来翻来覆去的查找各种博客模板最终google到了octopress，刚开始部署按照教程去走也还算顺利，在本地看到了自带模板的模样，直觉告诉我 I like it!
-于是乎就喜滋滋的开始了octopress折腾之路，一路上披荆斩棘解决各种坑，几乎把google和百度都查了个遍，以至于凡是带octopress关键字的我都进去瞅过，终于有了现在这个博客，虽然还是很简陋，但是以我从来没有接触ruby（弄这个博客之前ruby是什么我都不知道。。。）、git（知道，但是从来没用过。。。）、html、css、JavaScript的情况来看，这已经是我能做的最好看的样子了，嘿嘿嘿！
-<!--more--></p>
-
-<p>介于我折腾的如此痛苦（部署期间我翻阅了各种跟octopress相关的博客，但是要么写的不全面，要么是在MAC下或者linux下的部署步骤不适合windows，要么插件按照他写的步骤完全没法用—年代久远等因素），所以我想把我折腾的整个过程总结出来，写一个全面的系列，这样一来方便我自己后续查阅，二来给后面用octopress的人一个参考，你按照我的步骤去做就能做出我现在博客的样子，省去了很多折腾的时间（虽然折腾的过程也很有乐趣，嘿嘿）以上就是我为什么要写这个系列的原因。</p>
-
-<h3 id="section-1">二、部署之前需要做的事情</h3>
-
-<blockquote>
-  <ul>
-    <li><code>step 1：github_page建立</code>
-      <ul>
-        <li><code>首先你得有个github账号（github.com 不要问我怎么注册的。。。。如果这都要人教，我觉得你可以告别使用octopress了）</code></li>
-        <li><code>然后你要创建一个名为yourname.github.io的库，这里的yourname一定要确保跟你用户名一模一样。</code></li>
-        <li><code>最后到https://msysgit.github.io/下载一个git进行安装（同样不要问我怎么安装。。。。）</code></li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li><code>step 2：安装Ruby</code>
-      <ul>
-        <li><code>到http://rubyinstaller.org/downloads/下载rubyinstallers以及其对应版本的DevKit</code></li>
-        <li><code>先安装rubyinstall并设置好环境变量（正常情况下，你安装完毕他会自动部署好环境变量，但是有的时候不生效，你可以在PATH结尾处再弄一个，记住一定要;号结尾），然后把DevKit解压到C盘下，并设置环境变量</code></li>
-        <li><code>如果你随便打开一个文件夹，空白处右键打开git bash输入ruby然后按下tab键能自动出来ruby.exe的选项，证明你环境变量设置成功了。</code></li>
-        <li><code>在git bash里进入DevKit的目录进行DevKit的安装</code>
-          <ul>
-            <li><code>cd /c/devkit</code></li>
-            <li><code>ruby.exe dk.rb init</code></li>
-            <li><code>ruby.exe dk.rb install</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li><code>step 3：购买域名并绑定（可选）</code>
-      <ul>
-        <li><code>我的域名是在goddady买的，安全，而且可以使用支付宝（不过前提是不能使用超低折扣的折扣码，目前中国人能使用的折扣码只有8.99美元/年的）。别问我折扣码怎么得，自行百度。</code>
-          <ul>
-            <li><code>补充一些注意事项：</code>
-              <ul>
-                <li><code>注册时用户填写信息时一定要输入正确的邮箱名字，否则修改十分麻烦。</code></li>
-                <li><code>买完域名之后一定要记得去自己的邮箱查看激活邮件，否则域名激活不了。</code></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><code>买了域名以后记得到my account下去查看域名是否已经在你账户下</code></li>
-        <li><code>DNS服务设置可以参考这个帖子http://www.admin5.com/article/20131014/527502.shtml</code></li>
-        <li><code>DNS智能解析绑定</code>
-          <ul>
-            <li><code>到DNSPOD（https://www.dnspod.cn/）上点击产品中心里的域名解析</code></li>
-            <li><code>点击添加域名然后填入你在goddady购买的域名</code></li>
-            <li><code>需要注意的点：</code>
-              <ul>
-                <li><code>CNAME的记录值后面有个.号，这个一定要有，要注意！</code></li>
-                <li><code>A的记录值要照着写，这个是github的地址。</code></li>
-                <li><code>另外默认存在的NS的记录值要原封不动的填到goddady的DNS绑定服务器选项里，前面的帖子里有写照着填就好了。</code></li>
-              </ul>
-            </li>
-            <li><code>具体设置可以参考下图：</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/DNS解析设置.png"></p>
-
-<h3 id="octopress">三、octopress安装与部署</h3>
-<blockquote>
-  <ul>
-    <li><code>下载标准的octopress模板：</code>
-      <ul>
-        <li><code>git clone git://github.com/imathis/octopress.git octopress</code></li>
-        <li><code>gem install bundler</code></li>
-      </ul>
-    </li>
-    <li><code>移除国外ruby源添加淘宝ruby源：</code>
-      <ul>
-        <li><code>gem sources --remove https://rubygems.org/</code></li>
-        <li><code>gem sources -a http://ruby.taobao.org/</code></li>
-        <li><code>gem sources -l</code></li>
-        <li><code>一定要确保只有一个源</code></li>
-      </ul>
-    </li>
-    <li><code>安装各种关联包</code>
-      <ul>
-        <li><code>bundle install</code>
-          <ul>
-            <li><code>这里一步可能会持续很长时间，因为会报各种关联包缺失，你按照他的提示安装关联包即可，一直装到bundle install提示安装完成为止</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><code>安装octopress默认主题</code>
-      <ul>
-        <li><code>rake install</code></li>
-      </ul>
-    </li>
-    <li><code>设置github_page库地址</code>
-      <ul>
-        <li><code>rake setup_github_pages</code>
-          <ul>
-            <li><code>这里填写的url是你自己的page库，格式如下：</code>
-              <ul>
-                <li><code>git@github.com:yourname/yourname.github.io.git</code></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><code>设置CNAME</code>
-      <ul>
-        <li><code>echo '你的域名' &gt;&gt; source/CNAME      //如果你有自己的域名可以这样操作绑定到github的二级域名上。</code></li>
-      </ul>
-    </li>
-    <li><code>生成静态页面</code>
-      <ul>
-        <li><code>rake generate</code></li>
-      </ul>
-    </li>
-    <li><code>本地测试</code>
-      <ul>
-        <li><code>rake preview</code></li>
-        <li><code>打开本地浏览器访问http://localhost:4000，如果能出来octopress默认页面就证明octopress本地库部署OK并且静态页面生成没有问题。</code></li>
-      </ul>
-    </li>
-    <li><code>push静态页面到你的github_page库上</code>
-      <ul>
-        <li><code>rake deploy</code></li>
-      </ul>
-    </li>
-    <li><code>备份本地octopress库到github_page库的source分支上</code>
-      <ul>
-        <li><code>git add .</code></li>
-        <li><code>git commit -am "YY-MM-DD-hh:mm"</code></li>
-        <li><code>git push origin source</code></li>
-      </ul>
-    </li>
-    <li><code>注意：以上的操作都要在octopress目录下做</code></li>
-    <li><code>访问你的域名看看是否能正常访问（域名绑定和解析需要等一段时间）</code></li>
-  </ul>
-</blockquote>
-
-<p>至此，整个octopress的安装与部署就完成了。但是默认的界面比较土，而且功能单一，所以后面将会逐步逐步的去给它添加插件以及修改框架，把它变成属于你的独一无二的博客。</p>
 ]]></content>
   </entry>
   

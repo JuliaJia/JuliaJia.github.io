@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sony - JuliaJia's coder paradise</title>
+  <title>【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World! - JuliaJia's coder paradise</title>
   <meta name="author" content="Julia Jia">
 
   
-  <meta name="description" content="Sony Jun 28th, 2015 1:18 pm Jun 28th, 2015 1:18 pm Tweet Comments Please enable JavaScript to view the comments powered by Disqus. JuliaJia 80后技术宅， &hellip;">
+  <meta name="description" content="一、部署python-flask的环境 二、部署python-flask基本环境 三、Hello World 一、部署python-flask的环境 操作系统：Ubuntu14.04-64bit 编辑器：Emacs24.3 Python版本：2.7 二、部署python-flask基本环境 1. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://juliajia.github.io/blog/sony/index.html">
+  <link rel="canonical" href="http://juliajia.github.io/blog/20150710/python-flask-01.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="JuliaJia's coder paradise" type="application/atom+xml">
@@ -138,44 +138,215 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Sony</h1>
-    <p class="meta">
-
-
-
-
-<time class='entry-date' datetime='2015-06-28T13:18:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:18 pm</span></time></p>
-  </header>
-  
-  
-  
-    <footer>
+    
+      <h1 class="entry-title">【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World!</h1>
+    
+    
       <p class="meta">
         
+
+
+
+
+<time class='entry-date' datetime='2015-07-10T15:21:13+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:21 pm</span></time>
         
-
-
-
-
-<time class='entry-date' datetime='2015-06-28T13:18:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:18 pm</span></time>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://juliajia.github.io">Comments</a>
         
-		
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul id="markdown-toc">
+  <li><a href="#python-flask" id="markdown-toc-python-flask">一、部署python-flask的环境</a></li>
+  <li><a href="#python-flask-1" id="markdown-toc-python-flask-1">二、部署python-flask基本环境</a></li>
+  <li><a href="#hello-world" id="markdown-toc-hello-world">三、Hello World</a></li>
+</ul>
+
+<h3 id="python-flask">一、部署python-flask的环境</h3>
+<blockquote>
+  <ul>
+    <li>操作系统：Ubuntu14.04-64bit</li>
+    <li>编辑器：Emacs24.3</li>
+    <li>Python版本：2.7
+<!--more--></li>
+  </ul>
+</blockquote>
+
+<h3 id="python-flask-1">二、部署python-flask基本环境</h3>
+<blockquote>
+  <ul>
+    <li>1.部署flask的基础环境
+      <ul>
+        <li>sudo apt-get install python-virtualenv     //安装python的虚拟环境</li>
+        <li>mkdir /data/python-flask</li>
+        <li>cd /data/python-flask</li>
+        <li>virtualenv flask    //构建flask虚拟环境</li>
+      </ul>
+    </li>
+    <li>2.安装flask和flask的扩展：
+      <ul>
+        <li>flask/bin/pip install flask</li>
+        <li>flask/bin/pip install flask-login</li>
+        <li>flask/bin/pip install flask-openid</li>
+        <li>flask/bin/pip install flask-mail</li>
+        <li>flask/bin/pip install flask-sqlalchemy</li>
+        <li>flask/bin/pip install sqlalchemy-migrate</li>
+        <li>flask/bin/pip install flask-whooshalchemy</li>
+        <li>flask/bin/pip install flask-wtf</li>
+        <li>flask/bin/pip install flask-babel</li>
+        <li>flask/bin/pip install guess_language</li>
+        <li>flask/bin/pip install flipflop</li>
+        <li>flask/bin/pip install coverage</li>
+      </ul>
+    </li>
+    <li>3.创建web开发文件夹：
+      <ul>
+        <li>mkdir app</li>
+        <li>mkdir app/static</li>
+        <li>mkdir app/templates</li>
+        <li>mkdir tmp</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="hello-world">三、Hello World</h3>
+<blockquote>
+  <ul>
+    <li>1.创建一个简单的初始化脚本__init__.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/__init__.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span><span class="line">
+</span><span class="line"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</span><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">views</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>2.创建一个视图函数脚本views.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/views.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class="line"><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</span><span class="line"><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/index&#39;</span><span class="p">)</span>
+</span><span class="line"><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class="line">    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>3.创建启动WEB服务器的脚本run.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>/data/python-flask/run.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="c">#!flask/bin/python</span>
+</span><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class="line">
+</span><span class="line"><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>4.给这个启动脚本添加可执行权限
+      <ul>
+        <li>chmod a+x run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>5.执行这个启动脚本
+      <ul>
+        <li>./run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>成功执行启动脚本以后就可以用浏览器访问http://localhost:5000，然后就能看到Hello World啦！这样简单的python-flask就部署完毕了。下一篇我们将学习python-flask的模板用法以及一些简单的jinja2的语法，敬请期待！</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://juliajia.github.io/blog/sony/index.html" data-via="" data-counturl="http://juliajia.github.io/blog/sony/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Julia Jia</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-07-10T15:21:13+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:21 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/basic/'>basic</a>
+  
+</span>
+
+
+	  
+
+<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
+<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
+<IMG alt="" src="http://7xjw6q.com1.z0.glb.clouddn.com/JuliaJia半身照照片.JPG" width=90 height=100></DIV> 
+<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
+作者： <A href="http://www.juliajia.com/">JuliaJia</A> <BR> 
+出处： <A href="http://www.juliajia.com/">http://www.juliajia.com/</A> 
+<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
+署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
+<a href="http://www.juliajia.com/">JuliaJia</a>（包含链接）。 </DIV></DIV> 
+
+	  
+
+<span class="tags">
+  
+    <a class='tag' href='/blog/tags/from-0-to-1/'>from 0 to 1</a>, <a class='tag' href='/blog/tags/jinja2/'>jinja2</a>, <a class='tag' href='/blog/tags/python-flask/'>python-flask</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://juliajia.github.io/blog/20150710/python-flask-01.html" data-via="" data-counturl="http://juliajia.github.io/blog/20150710/python-flask-01.html" >Tweet</a>
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/20150710/programming-in-c-02.html" title="Previous Post: 【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）">&laquo; 【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20150710/python-flask-02.html" title="Next Post: 【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法">【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -272,8 +443,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://juliajia.github.io/blog/sony/index.html';
-        var disqus_url = 'http://juliajia.github.io/blog/sony/index.html';
+        var disqus_identifier = 'http://juliajia.github.io/blog/20150710/python-flask-01.html';
+        var disqus_url = 'http://juliajia.github.io/blog/20150710/python-flask-01.html';
         var disqus_script = 'embed.js';
       
     (function () {

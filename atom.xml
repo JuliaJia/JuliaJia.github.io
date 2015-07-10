@@ -4,7 +4,7 @@
   <title><![CDATA[JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-10T14:40:56+08:00</updated>
+  <updated>2015-07-10T15:17:58+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -37,7 +37,8 @@
       <ul>
         <li>讲解：
           <ul>
-            <li>这个题目很简单就是让你使用printf()函数打印出这四句话，注意换行符哦！题目答案代码如下：</li>
+            <li>这个题目很简单就是让你使用printf()函数打印出这四句话，注意换行符哦！题目答案代码如下：
+<!--more--></li>
           </ul>
         </li>
       </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: from 0 to 1 | JuliaJia's coder paradise]]></title>
   <link href="http://juliajia.github.io/blog/tags/from-0-to-1/atom.xml" rel="self"/>
   <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-10T14:40:56+08:00</updated>
+  <updated>2015-07-10T15:17:58+08:00</updated>
   <id>http://juliajia.github.io/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -39,6 +39,7 @@
         <li>讲解：
           <ul>
             <li>这个题目很简单就是让你使用printf()函数打印出这四句话，注意换行符哦！题目答案代码如下：
+<!--more-->
 <figure class='code'><figcaption><span>prog3.2.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>

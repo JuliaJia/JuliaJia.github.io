@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>【龍馬君从零开始学C语言系列之一】Programming in C：第一至第四章（理论笔记） - JuliaJia's coder paradise</title>
+  <meta name="author" content="Julia Jia">
+
+  
+  <meta name="description" content="一、入门 二、基础知识 三、编译并运行第一个程序 四、变量、数据类型和算数表达式 一、入门 1.学习C需要尽可能多的去实验 2.代码可读性很重要 二、基础知识 1.程序设计 1.计算机系统能够执行的基本指令的集合，我们称之为计算机的指令集 2.用来解决某个具体问题的计算机指令集和， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://juliajia.github.io/blog/20150708/programming-in-c-01.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="JuliaJia's coder paradise" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+  <script src="/javascripts/menu.min.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"><font color="#36648B">JuliaJia's</font> <font color="#EE7621">coder</font>  <font color="#8968CD">paradise</font></a></h1>
+  
+    <h2>凤凰涅槃，三年不飞三年不鸣，要飞一飞冲天，要鸣一鸣惊人！</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="juliajia.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><font size="2" color="#00688B">Blog</font></a>
+    <ul>
+      <li><a href="/blog/about-me"><font size="2" color="#EE7621">ABOUT ME</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/date-categories"><font size="2" color="#CD3278">DATE_CATEGORIES</font></a>
+    <ul>
+      <li><a href="/blog/2015"><font size="2" color="#7CCD7C">2015</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/technology"><font size="2" color="#104E8B">TECHNOLOGY</font></a>
+    <ul>
+      <li><a href="/blog/algorithm"><font size="2" color="#778899">ALGORITHM</font></a></li>
+	  <li><a href="/blog/coding"><font size="2" color="#B03060">CODING</font></a></li>
+	  <li><a href="/blog/OPS"><font size="2" color="#8B6914">OPS</font></a></li>
+	  <li><a href="/blog/math"><font size="2" color="#8B5A2B">MATH</font></a></li>
+    </ul>
+</li>
+  <li><a href="/blog/life"><font size="2" color="#EE5C42">LIFE</font></a>
+    <ul>
+      <li><a href="/blog/miu"><font size="2" color="#EE799F">MIU~!MIU~!</font></a></li>
+	  <li><a href="/blog/travel"><font size="2" color="#EE9A00">TRAVEL</font></a></li>
+	  <li><a href="/blog/reading"><font size="2" color="#C67171">READING</font></a></li>
+	  <li><a href="/blog/riding"><font size="2" color="#CD2626">RIDING</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/nirvana-plan"><font size="2" color="#8B5742">NIRVANA PLAN</font></a>
+    <ul>
+      <li><a href="/blog/introspection"><font size="2" color="#68228B">INTROSPECTION</font></a></li>
+	  <li><a href="/blog/thinking"><font size="2" color="#9ACD32">THINKING</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/game"><font size="2" color="#CD0000">GAME</font></a>
+    <ul>
+      <li><a href="/blog/sony"><font size="2" color="#3A5FCD">SONY</font></a></li>
+	  <li><a href="/blog/the-xbox-empire"><font size="2" color="#3CB371">THE XBOX EMPIRE</font></a></li>
+	  <li><a href="/blog/the-pc-holy-land"><font size="2" color="#EE7621">THE PC HOLY LAND</font></a></li>
+	  <li><a href="/blog/electronic-sports-games"><font size="2" color="#1874CD">ELECTRONIC SOPRTS GAMES</font></a></li>
+	  <li><a href="/blog/online-game"><font size="2" color="#C71585">ONLINE GAME</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/other"><font size="2" color="#6E8B3D">OTHER</font></a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">【龍馬君从零开始学C语言系列之一】Programming in C：第一至第四章（理论笔记）</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-08T20:39:12+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:39 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://juliajia.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、入门</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、基础知识</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三、编译并运行第一个程序</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">四、变量、数据类型和算数表达式</a></li>
+</ul>
+
+<h3 id="section">一、入门</h3>
+<blockquote>
+  <ul>
+    <li>1.学习C需要尽可能多的去实验</li>
+    <li>2.代码可读性很重要</li>
+  </ul>
+</blockquote>
+
+<h3 id="section-1">二、基础知识</h3>
+<blockquote>
+  <ul>
+    <li>1.程序设计
+      <ul>
+        <li>1.计算机系统能够执行的基本指令的集合，我们称之为计算机的指令集</li>
+        <li>2.用来解决某个具体问题的计算机指令集和，我们称之为计算机程序</li>
+        <li>3.用来解决某个具体问题的方法，我们称之为算法</li>
+        <li>4.使用计算机解决制定问题的流程是：
+          <ul>
+            <li>step 1：找到解决该问题的方法，也就是找到算法</li>
+            <li>step 2：在用一段计算机程序去表达/实现这个算法
+<!--more--></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>2.高级编程语言
+      <ul>
+        <li>1.使用高级编程语言，我们不再需要了解具体计算机系统的结构。</li>
+        <li>2.高级编程语言可移植性高</li>
+        <li>3.高级编程语言需要编译器—一个用来将高级编程语言编写的程序翻译成特定计算机系统能理解的机器指令的程序。</li>
+      </ul>
+    </li>
+    <li>3.操作系统
+      <ul>
+        <li>1.操作系统被用来控制计算机系统所有操作的程序</li>
+        <li>2.操作系统必须管理计算机的所有资源并负责运行所有的程序</li>
+      </ul>
+    </li>
+    <li>4.编译程序
+      <ul>
+        <li>1.编译程序的基本步骤：
+          <ul>
+            <li>step 1：用文本编辑器将C语言编写的程序输入到计算机系统的文件中。</li>
+            <li>step 2：使用gcc prog1.c的命令告诉计算机开始编译</li>
+            <li>step 3：编译器收到编译指示后，它首先检查源程序的每一条语句，看他是否符合语言的语法和词法。如果有错误，编译器会报错给用户并停止运行。</li>
+            <li>step 4：如果编译器没有发现任何的语法和词法的错误，它将会把高级编程语言编写的源程序翻译为较低级的形式—汇编语言程序</li>
+            <li>step 5：然后再将汇编语言程序翻译为实际的机器指令并生成目标文件（通常.o结尾）</li>
+            <li>step 6：生成目标文件以后编译器会执行连接（连接的主要作用是将目标代码转化为具体的计算机系统上实际的可执行程序）的操作</li>
+            <li>step 7：连接器会把刚刚生成的可执行代码保存在系统的可执行文件中（通常.out结尾）
+  至此编译程序的完整流程就走完了</li>
+          </ul>
+        </li>
+        <li>2.程序运行时，计算机会按照顺序执行程序中的指令，除非遇到中止/挂起等指令。</li>
+      </ul>
+    </li>
+    <li>5.解释型语言
+      <ul>
+        <li>1.python就是一门典型的解释型语言</li>
+        <li>2.解释型语言没有编译器只有解释器，它通过解释器一边分析源程序一边执行。因此解释型程序会比编译型程序执行得慢，但是解释型语言调试起来容易一些。</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-2">三、编译并运行第一个程序</h3>
+<blockquote>
+  <ul>
+    <li>1.万年“Hello World!”</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>prog1.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<blockquote>
+  <ul>
+    <li>2.编译prog1.c
+      <ul>
+        <li>gcc prog1.c -o prog1</li>
+      </ul>
+    </li>
+    <li>3.运行prog1
+      <ul>
+        <li>prog1</li>
+      </ul>
+    </li>
+    <li>4.prog1代码解析
+      <ul>
+        <li>1.#include <stdio.h>
+</stdio.h>          <ul>
+            <li>stdio.h是标准输入输出头文件，里面有很多已经编写好的标准函数提供给程序员使用，有点像python的模块。</li>
+          </ul>
+        </li>
+        <li>2.int main(void)
+          <ul>
+            <li>定义了一个名为main的函数（在C语言中，main就是主函数），并定义了这个函数的type是整型。</li>
+          </ul>
+        </li>
+        <li>3.{}
+          <ul>
+            <li>C语言通过{}来表明函数块范围。</li>
+          </ul>
+        </li>
+        <li>4.void
+          <ul>
+            <li>表示函数main不需要任何参数</li>
+          </ul>
+        </li>
+        <li>5.printf();
+          <ul>
+            <li>printf函数是C语言的一个标准库函数，这个函数把传递给它的参数打印到屏幕上。</li>
+            <li>\n是换行符</li>
+          </ul>
+        </li>
+        <li>6.return 0;
+          <ul>
+            <li>表示函数结束并返回一个0值作为结束状态。</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>5.显示变量的值
+      <ul>
+        <li>1.prog2代码解析
+          <ul>
+            <li>1.int a;
+              <ul>
+                <li>定义一个名为a的整型变量</li>
+              </ul>
+            </li>
+            <li>2.a = 50 + 25;
+              <ul>
+                <li>这个表达式的含义是给变量a赋值</li>
+              </ul>
+            </li>
+            <li>3.%i
+              <ul>
+                <li>%i表示这里使用一个整型的变量值，变量值由,号后面的参数提供。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>prog2.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span><span class="line">    <span class="n">a</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">25</span><span class="p">;</span>
+</span><span class="line">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The sum of 50 and 25 is %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<blockquote>
+  <ul>
+    <li>6.注释
+      <ul>
+        <li>1./* 我是注释 */
+          <ul>
+            <li>我能换行注释</li>
+          </ul>
+        </li>
+        <li>2.//我也是注释
+          <ul>
+            <li>我只能单行注释</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-3">四、变量、数据类型和算数表达式</h3>
+<blockquote>
+  <ul>
+    <li>1.使用变量
+      <ul>
+        <li>1.合法的变量名
+          <ul>
+            <li>1.字母或下划线开头</li>
+            <li>2.由字母、下划线以及数字0-9组成</li>
+            <li>3.不能使用保留关键字</li>
+          </ul>
+        </li>
+        <li>2.最好使用有意义的长短合适的变量名</li>
+      </ul>
+    </li>
+    <li>2.数据类型与常量
+      <ul>
+        <li>1.整型—int（%i）
+          <ul>
+            <li>1.long—长整型（目前为止long int跟int其实没有差别都是32位）</li>
+            <li>2.long long—超长整型支持64位</li>
+            <li>3.short—短整型（16位以上）
+              <ul>
+                <li>short整型没有常量表达式，只能通过普通整型数的格式化输入符号前面放一个字母h，比如%hi来进行输出。（了解即可，这种东西现在完全没用武之地。。。。）</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>2.其他数据类型—float/double/char/_bool
+          <ul>
+            <li>1.float—用来储存浮点数（%g）</li>
+            <li>2.double—-用来储存双精度浮点数（%g）</li>
+            <li>3.char—-用来储存单个字符（%c）</li>
+            <li>4._bool—用来储存布尔值（i%）</li>
+          </ul>
+        </li>
+        <li>3.常量
+          <ul>
+            <li>在C语言中，任何数字，单个字符或者字符串都被看作是常量。
+书里面做了一个很有意思的数据类型实验，等实验篇的时候我们来详细的看一看！</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Julia Jia</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-07-08T20:39:12+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:39 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/basic/'>basic</a>
+  
+</span>
+
+
+	  
+
+<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
+<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
+<IMG alt="" src="http://7xjw6q.com1.z0.glb.clouddn.com/JuliaJia半身照照片.JPG" width=90 height=100></DIV> 
+<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
+作者： <A href="http://www.juliajia.com/">JuliaJia</A> <BR> 
+出处： <A href="http://www.juliajia.com/">http://www.juliajia.com/</A> 
+<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
+署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
+<a href="http://www.juliajia.com/">JuliaJia</a>（包含链接）。 </DIV></DIV> 
+
+	  
+
+<span class="tags">
+  
+    <a class='tag' href='/blog/tags/c/'>C</a>, <a class='tag' href='/blog/tags/from-0-to-1/'>from 0 to 1</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://juliajia.github.io/blog/20150708/programming-in-c-01.html" data-via="" data-counturl="http://juliajia.github.io/blog/20150708/programming-in-c-01.html" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20150701/octopress-02.html" title="Previous Post: 【从零开始部署octopress系列之二】octopress定制化部署(1)">&laquo; 【从零开始部署octopress系列之二】octopress定制化部署(1)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20150710/programming-in-c-02.html" title="Next Post: 【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）">【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记） &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>JuliaJia</h1>
+  <img class="left" src="http://7xjw6q.com1.z0.glb.clouddn.com/头像.jpg" title="width=&quot;5&quot; height=&quot;10&quot;" alt="width=&quot;5&quot; height=&quot;10&quot;">
+  <p>80后技术宅，武大数学系毕业，BAT里待过两家，现在在一家小公司做运维经理，现居深圳。</p>
+  <p>目标：美国google研究院</p>
+  <p>目前研究方向：跟大数据有关的一切</p>
+  <p><a href="http://weibo.com/banbenlongma" target="_blank" title=" 我的微博"><i class="fa fa-weibo fa-2x"></i></a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20150710/programming-in-c-02.html">【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150708/programming-in-c-01.html">【龍馬君从零开始学C语言系列之一】Programming in C：第一至第四章（理论笔记）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150701/octopress-02.html">【从零开始部署octopress系列之二】octopress定制化部署(1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150630/octopress-01.html">【从零开始部署octopress系列之一】octopress安装与部署</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150630/saltstack-01.html">【saltstack】saltstack初步安装与部署</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/basic/'>basic (4)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (2)</a></li>
+<li class='category'><a href='/blog/categories/devops/'>devops (1)</a></li>
+
+  </ul>
+</section><section>
+    <h1>Tags</h1>
+    <ul class="tag-cloud">
+        <li><a style="font-size: 78%" href="/blog/tags/c/">C(2)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/centos6-dot-5-64bit/">CentOS6.5-64bit(1)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/linux/">Linux(1)</a></li>
+<li><a style="font-size: 78%" href="/blog/tags/mit/">MIT(2)</a></li>
+<li><a style="font-size: 150%" href="/blog/tags/from-0-to-1/">from 0 to 1(4)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/git/">git(1)</a></li>
+<li><a style="font-size: 78%" href="/blog/tags/introduction-to-computer/">introduction to computer(2)</a></li>
+<li><a style="font-size: 78%" href="/blog/tags/octopress/">octopress(2)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/ruby/">ruby(1)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/saltstack/">saltstack(1)</a></li>
+
+    </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Julia Jia -
+  <span class="credit">Powered by <a href="http://www.juliajia.com">JuliaJia</a></span>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255528940'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255528940%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'juliajia';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://juliajia.github.io/blog/20150708/programming-in-c-01.html';
+        var disqus_url = 'http://juliajia.github.io/blog/20150708/programming-in-c-01.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <!--返回顶部开始-->
+<div id="full" style="width:0px; height:0px; position:fixed; right:180px; bottom:150px; z-index:100; text-align:center; background-color:transparent; cursor:pointer;">
+        <a href="#" onclick="goTop();return false;"><img src="http://7xjw6q.com1.z0.glb.clouddn.com/top.png" border=0 alt="返回顶部"></a>
+</div>
+<script src="/javascripts/top.js" type="text/javascript"></script>
+<!--返回顶部结束-->
+</body>
+</html>

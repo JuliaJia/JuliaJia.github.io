@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Basic | JuliaJia's coder paradise]]></title>
+<<<<<<< HEAD
   <link href="http://www.juliajia.com/blog/categories/basic/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
   <updated>2016-06-02T22:01:38+08:00</updated>
   <id>http://www.juliajia.com/</id>
+=======
+  <link href="http://juliajia.github.io/blog/categories/basic/atom.xml" rel="self"/>
+  <link href="http://juliajia.github.io/"/>
+  <updated>2015-07-10T17:29:31+08:00</updated>
+  <id>http://juliajia.github.io/</id>
+>>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
   <author>
     <name><![CDATA[Julia Jia]]></name>
     
@@ -14,10 +21,753 @@
 
   
   <entry>
+<<<<<<< HEAD
     <title type="html"><![CDATA[【龍馬君读书笔记系列之一】Programming in C：第一至第四章（理论笔记）]]></title>
     <link href="http://www.juliajia.com/blog/20150708/programming-in-c-01.html"/>
     <updated>2015-07-08T20:39:12+08:00</updated>
     <id>http://www.juliajia.com/blog/20150708/programming-in-c-01</id>
+=======
+    <title type="html"><![CDATA[【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法]]></title>
+    <link href="http://juliajia.github.io/blog/20150710/python-flask-02.html"/>
+    <updated>2015-07-10T15:21:59+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150710/python-flask-02</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、应用模板的简单案例</a></li>
+  <li><a href="#jinja2" id="markdown-toc-jinja2">二、jinja2的控制语句</a></li>
+  <li><a href="#jinja2-1" id="markdown-toc-jinja2-1">三、jinja2的循环语句</a></li>
+  <li><a href="#jinja2-2" id="markdown-toc-jinja2-2">四、jinja2的模板继承属性</a></li>
+</ul>
+
+<h3 id="section">一、应用模板的简单案例</h3>
+<blockquote>
+  <ul>
+    <li>1.如果没有模板会怎样？
+我们之前已经部署好了python-flask的基础开发环境并成功的完成了万里长征第一步：万年Hello World的展示。不过我们学习python-flask可不是仅仅只是为了展示Hello World的，所以我们会美观我们的页面我们会设置很多页面属性，所以当我们想对这个程序做扩展的时候，我们会这样做：
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>   <span class="c">#fake user</span>
+</span><span class='line'>  <span class="k">return</span> <span class="err">‘’’</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Home</span> <span class="n">Page</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Hello</span><span class="p">,</span><span class="s">&#39;&#39;&#39; + user[&#39;nickname&#39;] + &#39;&#39;&#39;</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">’’’</span>
+</span></code></pre></td></tr></table></div></figure>
+<!--more-->
+保存退出以后再刷新一下浏览器，你应该可以看到Hello，Miguel出现，并且标题是Home Page！先别太激动哦，这还只是简单的一点小小的改动，现在想象一下，如果我们需要写各种复杂的页面的时候，它们跟应用程序代码挤在一起岂不是要乱成粥了？光是想想头就莫名开始痛起来，因此不把网页代码跟应用程序分开是不行的，而且你也不希望把前端网页工程师的工作也做了吧^_^！因此python-flask设计者设计出了模板，我们接下来看看我们使用模板的话，刚才的代码是怎样的！</p>
+
+<blockquote>
+  <ul>
+    <li>2.如何使用模板
+首先我们来写一个模板，代码如下：</li>
+  </ul>
+</blockquote>
+
+<p>注意：由于博客不支持jinja2的代码所以我这边只能靠截图来展现代码了！</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-01.png" title="Stupid ET #2" ></p>
+
+<p>聪明的你一定发现了，除了和以外这段代码跟刚刚我们添加到view.py里的没什么太大的区别！没错，其实这两个也不陌生，它们就是变量！那么它们的值是什么呢？？？？别急，我们接下来看看view.py
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>    <span class="c">#  fake user</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="err">“</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Home</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+这里跟刚才不同的地方就在于render_template函数的引入，这是个什么东东呢？其实说白了就是基于你模板名称以及设定的变量信息，他帮你完成替换工作，现在你明白刚刚那两个变量有什么用了吧！（需要注意的是，在内部，其实render_template调用了jinja2模板引擎的，由jinja2来做替换工作）</p>
+
+<h3 id="jinja2">二、jinja2的控制语句</h3>
+<p>讲到模板就不得不提jinja2，那么什么是jinja2呢？我搜索了一下，绝大部分介绍jinja2的都说它是仿照Django模板的python模板语言，看到这里什么是django？什么是模板语言？等等这些问题都涌了出来，不过我们这个系列是写python-flask的，所以不可以发散那么远，等以后有精力了，再去好好研究一下jinja2和django！</p>
+
+<p>言归正传，我们来看看这个类Django的python模板语言—-Jinja2是如何去做控制的，我先提出一个问题，如果之前的代码里我少提供了一个变量会怎样？你一定会说，肯定会报错啊！没错，稍微有点开发经验的人都能猜到程序会报错，那么这段代码岂不是很死板，就不能智能的判断吗？如果用户没有提供就让程序使用默认字段代替呗！这里有个字眼—“判断”，呵呵，听到这个词，明显就是需要用到控制语句了，因此解决刚刚所说的问题解决办法就出来了，利用jinja2的控制语句进行判断何时执行默认的操作，代码如下：</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-02.png" title="Stupid ET #2" ></p>
+
+<p>保存代码（代码我就不解释了吧，如此清晰的语法，连我这种刚开始学习代码的二把刀都能看明白，我相信大家都能看明白是怎么回事儿）之后咱们去view.py把title参数给删除并运行run.py，看看是否会报错，最后刷新页面看看是否显示咱们指定的默认title了，如果你发现成功了的话，你可以想想如果user.nickname参数没有提供怎么办呢？动起手来改造一下，感受一下吧！！！！</p>
+
+<h3 id="jinja2-1">三、jinja2的循环语句</h3>
+<p>既然讲了控制，自然会讲到循环（为什么我要这么说，我也不知道，可能是最近看MIT的计算机导论课程看多了的关系吧！！原谅我吧！），循环顾名思义它就是一个环，只有满足指定条件它才会被打破，你可以想象你在跑圈，然后你给自己定义跑3圈停下，那么3圈就是指定条件（这个比喻形象吗？）！</p>
+
+<p>看到这里很多人会觉得这玩意儿有什么用呢？我其实也不太懂，我一般只拿它来做遍历（我经常跟别人说我写过一个特别操蛋的程序，就是分布式的层层循环的去ping一万+的服务器来测试他们是否存活，原因嘛很简单，一次ping出来的结果往往是不准的，只有不断的去ping然后层层过滤ping不同的列表才是真正的ping不通的服务器，是不是很操蛋。。。。。），无论是遍历字典还是遍历列表还是遍历文件生成列表，所以我隐隐记得有大神说过算法牛逼的程序循环是非常少的（可能是我精分癌发作记错-_-d）！</p>
+
+<p>我感觉我跑题了！！！！赶紧把思绪拉回来！！！！我们继续研究jinja2的循环语句，不管这个东西怎样，存在即合理，我们就要学习它！不为别的，就为把妹的时候也能多一点谈资（我感觉我好low ⊙ o ⊙ ）！要用到jinja2的循环我们必须改造一下我们的view.py脚本：
+<figure class='code'><figcaption><span>app/view.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Miguel</span><span class="err">’</span> <span class="p">}</span>    <span class="c">#  fake user</span>
+</span><span class='line'>    <span class="n">posts</span> <span class="o">=</span> <span class="p">[</span> <span class="c"># fake array of posts</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">author</span><span class="err">’</span><span class="p">:</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">John</span><span class="err">’</span> <span class="p">},</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">body</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Beautiful</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">Portland</span><span class="err">!’</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">author</span><span class="err">’</span><span class="p">:</span> <span class="p">{</span> <span class="err">‘</span><span class="n">nickname</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">Susan</span><span class="err">’</span> <span class="p">},</span>
+</span><span class='line'>            <span class="err">‘</span><span class="n">body</span><span class="err">’</span><span class="p">:</span> <span class="err">‘</span><span class="n">The</span> <span class="n">Avengers</span> <span class="n">movie</span> <span class="n">was</span> <span class="n">so</span> <span class="n">cool</span><span class="err">!’</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">]</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="err">“</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">title</span> <span class="o">=</span> <span class="err">“</span><span class="n">Home</span><span class="err">”</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">,</span>
+</span><span class='line'>                                         <span class="n">posts</span> <span class="o">=</span> <span class="n">posts</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+心细的你一定发现了，这里多了个posts，它是个列表里面有两个字典元素，但是循环在哪呢？？？？别急别急嘛！刚刚我不是说过了么，我一般拿循环就是遍历个字典啊列表神马的，所以说我们要先给循环准备遍历的素材嘛！现在素材准备好了，我们可以开始写循环了：</p>
+
+<p>emacs app/templates/index.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-03.png" title="Stupid ET #2" ></p>
+
+<p>代码完成！现在把目光聚集到之间的那句代码，通过for循环遍历了posts列表里的元素（其实就两个），然后取出这两个元素的key_value（因为这两个元素是字典），最后利用key_value组合成一句话：某某人说了某某话，所以大家可以猜到显示结果就是John和Susan分别在屏幕上说了两句屁话。。。。至此简单的循环就介绍得差不多了，想要知道高级用法，第一手段：google 第二手段：百度 第三手段：等我学到那里吧！</p>
+
+<h3 id="jinja2-2">四、jinja2的模板继承属性</h3>
+<p>不知道你们有没有发现我们有好多代码都是重复利用的，难道我们每写一个页面都要复制粘贴吗？NO！我们这么聪（shu）明(lan)机（cheng）智（xing）的人怎么能容忍这些重复操作呢！设计jinja2的大牛们也和你我一样，因此他们就搞了个模板继承的属性，让重复利用的代码单独做个模板，想要用的时候继承一下就好了，这种充（lan）满（ai）智（huan）慧（zhe）结（fu）晶（yin）的工具我们怎么能不会呢？下面我们就来看个栗子：
+背景介绍：我们需要做一个导航栏，然后希望这个导航栏呢，在每个模板中都使用父模板（请允许我这样叫它）代码如下：</p>
+
+<p>emacs app/templates/base.html</p>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/python-flask-02-04.png" title="Stupid ET #2" ></p>
+
+<blockquote>
+  <ul>
+    <li>可以看到插入父模板只需要两个步骤：
+      <ul>
+        <li>step 1：告知父模板的名字</li>
+        <li>step 2：用定义好的block包裹该页面代码即可（这里的页面代码指的是唯一的、不需要重复利用的）</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>至此python-flask模板的一些使用方法和jinja2的一些简单语法我们就搞完了，下篇我们将学习flask-wtf表单，敬请期待！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World!]]></title>
+    <link href="http://juliajia.github.io/blog/20150710/python-flask-01.html"/>
+    <updated>2015-07-10T15:21:13+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150710/python-flask-01</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#python-flask" id="markdown-toc-python-flask">一、部署python-flask的环境</a></li>
+  <li><a href="#python-flask-1" id="markdown-toc-python-flask-1">二、部署python-flask基本环境</a></li>
+  <li><a href="#hello-world" id="markdown-toc-hello-world">三、Hello World</a></li>
+</ul>
+
+<h3 id="python-flask">一、部署python-flask的环境</h3>
+<blockquote>
+  <ul>
+    <li>操作系统：Ubuntu14.04-64bit</li>
+    <li>编辑器：Emacs24.3</li>
+    <li>Python版本：2.7
+<!--more--></li>
+  </ul>
+</blockquote>
+
+<h3 id="python-flask-1">二、部署python-flask基本环境</h3>
+<blockquote>
+  <ul>
+    <li>1.部署flask的基础环境
+      <ul>
+        <li>sudo apt-get install python-virtualenv     //安装python的虚拟环境</li>
+        <li>mkdir /data/python-flask</li>
+        <li>cd /data/python-flask</li>
+        <li>virtualenv flask    //构建flask虚拟环境</li>
+      </ul>
+    </li>
+    <li>2.安装flask和flask的扩展：
+      <ul>
+        <li>flask/bin/pip install flask</li>
+        <li>flask/bin/pip install flask-login</li>
+        <li>flask/bin/pip install flask-openid</li>
+        <li>flask/bin/pip install flask-mail</li>
+        <li>flask/bin/pip install flask-sqlalchemy</li>
+        <li>flask/bin/pip install sqlalchemy-migrate</li>
+        <li>flask/bin/pip install flask-whooshalchemy</li>
+        <li>flask/bin/pip install flask-wtf</li>
+        <li>flask/bin/pip install flask-babel</li>
+        <li>flask/bin/pip install guess_language</li>
+        <li>flask/bin/pip install flipflop</li>
+        <li>flask/bin/pip install coverage</li>
+      </ul>
+    </li>
+    <li>3.创建web开发文件夹：
+      <ul>
+        <li>mkdir app</li>
+        <li>mkdir app/static</li>
+        <li>mkdir app/templates</li>
+        <li>mkdir tmp</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="hello-world">三、Hello World</h3>
+<blockquote>
+  <ul>
+    <li>1.创建一个简单的初始化脚本__init__.py
+<figure class='code'><figcaption><span>app/<strong>init</strong>.py</li></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">)</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">2.</span><span class="err">创建一个视图函数脚本</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="nd">@app.route</span><span class="p">(</span><span class="err">‘</span><span class="o">/</span><span class="n">index</span><span class="err">’</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">return</span> <span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="err">!”</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">3.</span><span class="err">创建启动</span><span class="n">WEB</span><span class="err">服务器的脚本</span><span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">python</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">flask</span><span class="o">/</span><span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</span><span class='line'><span class="c">#!flask/bin/python</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+&gt; * 4.给这个启动脚本添加可执行权限
+&gt;     * chmod a+x run.py</p>
+
+<blockquote>
+  <ul>
+    <li>5.执行这个启动脚本
+      <ul>
+        <li>./run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>成功执行启动脚本以后就可以用浏览器访问http://localhost:5000，然后就能看到Hello World啦！这样简单的python-flask就部署完毕了。下一篇我们将学习python-flask的模板用法以及一些简单的jinja2的语法，敬请期待！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）]]></title>
+    <link href="http://juliajia.github.io/blog/20150710/programming-in-c-02.html"/>
+    <updated>2015-07-10T14:04:19+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150710/programming-in-c-02</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、第三章习题</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、第四章习题</a></li>
+  <li><a href="#include-stdioh" id="markdown-toc-include-stdioh">include <stdio.h></stdio.h></a></li>
+</ul>
+
+<p>今天我们将《programming in C》第三章和第四章的coding习题讲一下（只讲我认为比较有意思的，那种特别特别简单的就不会讲了），以后也将会采用一天理论一天习题的方式去学习！</p>
+
+<h3 id="section">一、第三章习题</h3>
+
+<blockquote>
+  <ul>
+    <li>1.习题3.2  用C语言写一个程序，在终端上输出下面的句子：</li>
+    <li>1.In C, lowercase letters are significant.</li>
+    <li>2.main is where program execution begins.</li>
+    <li>3.Opening and closing braces enclose program statements in a routine.</li>
+    <li>4.All program statements must be terminated by a semicolon.
+      <ul>
+        <li>讲解：
+          <ul>
+            <li>这个题目很简单就是让你使用printf()函数打印出这四句话，注意换行符哦！题目答案代码如下：
+<!--more-->
+<figure class='code'><figcaption><span>prog3.2.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;&lt;/stdio.h&gt;&lt;/li&gt;</span>
+</span><span class='line'>          <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="mf">1.</span><span class="n">In</span> <span class="n">C</span><span class="p">,</span><span class="n">lowercase</span> <span class="n">letters</span> <span class="n">are</span> <span class="n">significant</span><span class="p">.</span><span class="err">\</span><span class="n">n2</span><span class="p">.</span><span class="n">main</span> <span class="n">is</span> <span class="n">where</span> <span class="n">program</span> <span class="n">execution</span> <span class="n">begins</span><span class="p">.</span><span class="err">\</span><span class="n">n3</span><span class="p">.</span><span class="n">Openning</span> <span class="n">and</span> <span class="n">closing</span> <span class="n">braces</span> <span class="n">enclose</span> <span class="n">program</span> <span class="n">statements</span> <span class="n">in</span> <span class="n">a</span> <span class="n">routine</span><span class="p">.</span><span class="err">\</span><span class="n">n4</span><span class="p">.</span><span class="n">All</span> <span class="n">program</span> <span class="n">statements</span> <span class="n">must</span> <span class="n">be</span> <span class="n">terminated</span> <span class="n">by</span> <span class="n">a</span> <span class="n">semicolon</span><span class="p">.</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">2.</span><span class="err">习题</span><span class="mf">3.4</span> <span class="err">写出计算</span><span class="mi">87</span><span class="err">减去</span><span class="mi">15</span><span class="err">的</span><span class="n">C</span><span class="err">语言程序，并把结果和合适的提示信息打印出来。</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>     <span class="o">*</span> <span class="err">讲解：</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>         <span class="o">*</span> <span class="err">这个题目也很简单，就是定义</span><span class="mi">3</span><span class="err">个整型变量</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="err">，然后赋值</span><span class="mi">87</span><span class="err">给</span><span class="n">a</span><span class="err">赋值</span><span class="mi">15</span><span class="err">给</span><span class="n">b</span><span class="err">，最后定义一个关于</span><span class="n">c</span><span class="err">的表达式即可，答案代码如下：</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">c</span> <span class="n">prog3</span><span class="mf">.4</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;&lt;/stdio.h&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">a</span> <span class="o">=</span> <span class="mi">87</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">b</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">i</span> <span class="n">minus</span> <span class="o">%</span><span class="n">i</span> <span class="n">is</span> <span class="n">equal</span> <span class="n">to</span> <span class="o">%</span><span class="n">i</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">);</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span> <span class="err">```</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h3</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;section-1&quot;</span><span class="o">&gt;</span><span class="err">二、第四章习题</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="mf">1.</span><span class="err">案例</span><span class="mf">4.5</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">开始讲第四章习题之前我们把昨天提到的一个有意思的案例讲讲，这个案例是关于整型数与浮点数之间的转换的，案例代码如下：</span>
+</span></code></pre></td></tr></table></div></figure> c case4.5.c
+#include <stdio.h></stdio.h></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>int main(void)
+{
+    float f1 = 123.125,f2;
+    int i1,i2 = -150;
+    char c = ‘a’;</p>
+
+<pre><code>i1 = f1;
+printf("%f assigned to an int produces %i\n", f1,i1);
+
+f2 = i2;
+printf("%i assigned to a float produces %f\n",i2,f2);
+
+f1 = i2 / 100;
+printf("%i divided by 100 produces %f\n", i2,f1);
+
+f2 = i2 / 100.0;
+printf("%i divided by 100.0 produces %f\n",i2,f2);
+
+f2 = (float) i2 / 100;
+printf("(float) %i divided by 100 produces %f\n",i2,f2);
+
+return 0;
+</code></pre>
+
+<p>}
+<code>
+&gt; * 执行这段代码得到的结果如下，我们来一条条的讲：
+&gt;     * 123.125000 assigned to an int produces 123
+&gt;     * -150 assigned to a float produces -150.000000
+&gt;     * -150 divided by 100 produces -1.000000
+&gt;     * -150 divided by 100.0 produces -1.500000
+&gt;     * (float) -150 divided by 100 produces -1.500000
+&gt; * 第一条123.125000 assigned to an int produces 123对应的代码是：
+</code> c case4.5.c
+i1 = f1;
+printf(“%f assigned to an int produces %i\n”, f1,i1);
+<figure class='code'><figcaption><span>prog3.2.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="err">这个代码很简单，就是将一个浮点数</span><span class="mf">123.125</span><span class="err">赋值给一个整型变量</span><span class="n">i1</span><span class="err">，但是打印的结果我们发现仅仅只有</span><span class="mi">123</span><span class="err">，后面的</span><span class="mf">.125</span><span class="err">不见了，这说明在</span><span class="n">C</span><span class="err">语言中，如果我们把一个浮点数赋值给一个整型变量，那么浮点数的小数部分将会被舍去。</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">第二条</span><span class="o">-</span><span class="mi">150</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">a</span> <span class="kt">float</span> <span class="n">produces</span> <span class="o">-</span><span class="mf">150.000000</span><span class="err">对应的代码是：</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">c</span> <span class="n">case4</span><span class="mf">.5</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="n">f2</span> <span class="o">=</span> <span class="n">i2</span><span class="p">;</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i assigned to a float produces %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">f2</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="err">这段代码描述的是将一个整型数赋值给一个浮点变量，打印的结果我们发现</span><span class="o">-</span><span class="mi">150</span><span class="err">变成了</span><span class="o">-</span><span class="mf">150.000000</span><span class="err">，这说明在</span><span class="n">C</span><span class="err">语言中，如果我们把一个整型数赋值给一个浮点变量，浮点变量不会丢失任何精度，系统将会自动对其进行转换。</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">第三条</span><span class="o">-</span><span class="mi">150</span> <span class="n">divided</span> <span class="n">by</span> <span class="mi">100</span> <span class="n">produces</span> <span class="o">-</span><span class="mf">1.000000</span><span class="err">对应的代码是：</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">c</span> <span class="n">case4</span><span class="mf">.5</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="n">f1</span> <span class="o">=</span> <span class="n">i2</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i divided by 100 produces %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span><span class="n">f1</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="err">这段代码看起来仅仅只是一个简单的除法表达式，但是实际上很多人都会猜错它的打印结果，大多数初学</span><span class="n">C</span><span class="err">的人都会认为这个会输出</span><span class="o">-</span><span class="mf">1.500000</span><span class="err">，真实的情况却是</span><span class="o">-</span><span class="mf">1.000000</span><span class="err">，这其实是因为</span><span class="n">C</span><span class="err">语言中的整数除法规则导致的，这个规则规定了两个整数相除时，其余数将会被丢弃，即使我们将运算结果保存在一个浮点数中也是一样！</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">第四条</span><span class="o">-</span><span class="mi">150</span> <span class="n">divided</span> <span class="n">by</span> <span class="mf">100.0</span> <span class="n">produces</span> <span class="o">-</span><span class="mf">1.500000</span><span class="err">对应的代码是：</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">c</span> <span class="n">case4</span><span class="mf">.5</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="n">f2</span> <span class="o">=</span> <span class="n">i2</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i divided by 100.0 produces %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">f2</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="err">这段代码看起来跟刚才的没有什么区别但是它的结果却是我们想要的</span><span class="o">-</span><span class="mf">1.500000</span><span class="err">，这是因为这不是两个整数相除，而是一个整数和一个浮点数相除，所以保留了小数位！</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">第五条</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="o">-</span><span class="mi">150</span> <span class="n">divided</span> <span class="n">by</span> <span class="mi">100</span> <span class="n">produces</span> <span class="o">-</span><span class="mf">1.500000</span><span class="err">对应的代码是：</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">c</span> <span class="n">case4</span><span class="mf">.5</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="n">f2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="n">i2</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;(float) %i divided by 100 produces %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">f2</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="err">这段代码使用了类型转换符临时的转换了</span><span class="n">i2</span><span class="err">的类型所以结果仍然是</span><span class="o">-</span><span class="mf">1.500000</span><span class="err">！</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">注意：类型转换符仅仅是临时的转换了变量的类型，并不是永久的更改了变量的类型！</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="mf">2.</span><span class="err">习题</span><span class="mf">4.4</span> <span class="err">利用下面给出的公式，编写一个程序，将华氏（</span><span class="n">F</span><span class="err">）</span><span class="mi">27</span><span class="err">度换算成摄氏度（</span><span class="n">C</span><span class="err">）。</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">C</span> <span class="o">=</span> <span class="err">（</span><span class="n">F</span> <span class="o">-</span> <span class="mi">32</span><span class="err">）</span><span class="o">/</span> <span class="mf">1.8</span>
+</span><span class='line'>      <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">讲解：</span>
+</span><span class='line'>          <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>            <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="err">这道题要注意变量</span><span class="n">C</span><span class="err">的类型是</span><span class="kt">float</span><span class="err">而不是</span><span class="kt">int</span><span class="err">（从表达式中的</span><span class="mf">1.8</span><span class="err">可以看出来，案例</span><span class="mf">4.5</span><span class="err">有讲！）</span><span class="p">,</span><span class="err">答案代码如下：</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>          <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>        <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>      <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">blockquote</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">```</span> <span class="n">c</span> <span class="n">prog4</span><span class="mf">.4</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;&lt;/stdio.h&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">F</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">float</span> <span class="n">X</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">F</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">C</span> <span class="o">=</span> <span class="err">（</span><span class="n">y</span> <span class="o">-</span> <span class="mi">32</span><span class="err">）</span><span class="o">/</span> <span class="mf">1.8</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Fahrenheit</span> <span class="o">%</span><span class="n">i</span> <span class="n">degrees</span> <span class="n">conversion</span> <span class="k">for</span> <span class="n">centigrade</span> <span class="o">%</span><span class="n">f</span> <span class="n">degrees</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">3.</span><span class="err">习题</span><span class="mf">4.6</span> <span class="err">书写程序，计算下面多项式的值</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">X</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">X</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="err">，</span><span class="n">X</span> <span class="o">=</span> <span class="mf">2.55</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>     <span class="o">*</span> <span class="err">讲解：</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>         <span class="o">*</span> <span class="err">这道题跟刚才那道一样，主要是注意</span><span class="n">X</span><span class="err">是</span><span class="kt">float</span><span class="err">型的所以这个表达式的值也是</span><span class="kt">float</span><span class="err">型的</span><span class="p">,</span><span class="err">答案代码如下：</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">c</span> <span class="n">prog4</span><span class="mf">.6</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;&lt;/stdio.h&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">float</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">x</span> <span class="o">=</span> <span class="mf">2.55</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">x</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">x</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="mi">3</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">x</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">5</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">x</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="mi">2</span> <span class="o">+</span><span class="mi">6</span> <span class="o">=</span> <span class="o">%</span><span class="n">f</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">4.</span><span class="err">习题</span><span class="mf">4.7</span> <span class="err">编写程序，计算下面表达式的值，并用指数形式显示结果。</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="err">（</span><span class="mf">3.31</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">*</span><span class="err">２</span><span class="p">.</span><span class="err">０１　×</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span><span class="err">）</span><span class="o">/</span> <span class="err">（</span><span class="mf">7.16</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">+</span> <span class="mf">2.01</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">8</span><span class="err">）</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>     <span class="o">*</span> <span class="err">讲解：</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>         <span class="o">*</span> <span class="err">这道题主要的难点是考你知不知道如何使用指数形式显示结果，答案代码如下：</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">c</span> <span class="n">prog4</span><span class="mf">.7</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">float</span> <span class="n">answer</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">answer</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.31</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">*</span> <span class="mf">2.01</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">7.16</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">6</span> <span class="o">+</span> <span class="mf">2.01</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">8</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;(3.31 * 10 - 8 * 2.01 * 10 - 7) / (7.16 * 10 - 6 + 2.01 * 10 - 8) = %e</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="mf">5.</span><span class="err">习题</span><span class="mf">4.8</span> <span class="err">给出整数</span><span class="n">i</span><span class="err">和</span><span class="n">j</span><span class="err">，为了计算刚好比</span><span class="n">i</span><span class="err">大的下一个能整除</span><span class="n">j</span><span class="err">的整数，我们可以使用下面的公式：</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="n">Next_multiple</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="err">编写一个程序，计算当</span><span class="n">i</span><span class="err">和</span><span class="n">j</span><span class="err">等于下面给出的值的时候，下一个能整除</span><span class="n">j</span><span class="err">的数</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">365</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">12258</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">23</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">*</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">996</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>     <span class="o">*</span> <span class="err">讲解：</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>         <span class="o">*</span> <span class="err">这道题目主要是考察了单个变量多个值（在没有学习判断语句和如何输入的情况下），答案代码如下：</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">c</span> <span class="n">prog4</span><span class="mf">.8</span><span class="p">.</span><span class="n">c</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;include-stdioh&quot;</span><span class="o">&gt;</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;&lt;/</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">next_multiple</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//    next_multiple = i + j - i % j;</span>
+</span><span class='line'>    <span class="n">i</span> <span class="o">=</span> <span class="mi">365</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">next_multiple</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">i</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">next_multiple</span> <span class="o">=</span> <span class="o">%</span><span class="n">i</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">next_multiple</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">i</span> <span class="o">=</span> <span class="mi">12258</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">next_multiple</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">i</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">next_multiple</span> <span class="o">=</span> <span class="o">%</span><span class="n">i</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">next_multiple</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">i</span> <span class="o">=</span> <span class="mi">996</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">next_multiple</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">i</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="n">is</span> <span class="o">%</span><span class="n">i</span><span class="p">,</span><span class="n">next_multiple</span> <span class="o">=</span> <span class="o">%</span><span class="n">i</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">next_multiple</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>至此第三章和第四章的coding练习题就搞定了，下一篇我们将继续学习《Programming in C》后面的内容，敬请期待！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【龍馬君从零开始学C语言系列之一】Programming in C：第一至第四章（理论笔记）]]></title>
+    <link href="http://juliajia.github.io/blog/20150708/programming-in-c-01.html"/>
+    <updated>2015-07-08T20:39:12+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150708/programming-in-c-01</id>
+>>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、入门</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">二、基础知识</a></li>
@@ -265,9 +1015,15 @@
   
   <entry>
     <title type="html"><![CDATA[【计算机导论】第二课 条件分支语句和循环语句]]></title>
+<<<<<<< HEAD
     <link href="http://www.juliajia.com/blog/20150627/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%BA%8C%E8%AF%BE%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.html"/>
     <updated>2015-06-27T20:24:01+08:00</updated>
     <id>http://www.juliajia.com/blog/20150627/Post-计算机导论 第二课 分支语句和循环语句</id>
+=======
+    <link href="http://juliajia.github.io/blog/20150627/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%BA%8C%E8%AF%BE%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.html"/>
+    <updated>2015-06-27T20:24:01+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150627/Post-计算机导论 第二课 分支语句和循环语句</id>
+>>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">二、运算符和运算对象</a></li>
@@ -497,6 +1253,7 @@ else:
 ]]></content>
   </entry>
   
+<<<<<<< HEAD
   <entry>
     <title type="html"><![CDATA[【计算机导论】第一课 课程目标 数据类型 运算以及变量]]></title>
     <link href="http://www.juliajia.com/blog/20150624/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%80%E8%AF%BE%20%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20%E8%BF%90%E7%AE%97%E4%BB%A5%E5%8F%8A%E5%8F%98%E9%87%8F.html"/>
@@ -710,4 +1467,6 @@ else:
 ]]></content>
   </entry>
   
+=======
+>>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
 </feed>

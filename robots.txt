@@ -1,4 +1,8 @@
 User-agent: *
 Disallow: 
 
+<<<<<<< HEAD
 Sitemap: http://www.juliajia.com/sitemap.xml 
+=======
+Sitemap: http://juliajia.github.io/sitemap.xml 
+>>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8

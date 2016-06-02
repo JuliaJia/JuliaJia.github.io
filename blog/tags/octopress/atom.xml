@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: octopress | JuliaJia's coder paradise]]></title>
+  <link href="http://juliajia.github.io/blog/tags/octopress/atom.xml" rel="self"/>
+  <link href="http://juliajia.github.io/"/>
+  <updated>2015-07-10T17:29:31+08:00</updated>
+  <id>http://juliajia.github.io/</id>
+  <author>
+    <name><![CDATA[Julia Jia]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【从零开始部署octopress系列之二】octopress定制化部署(1)]]></title>
+    <link href="http://juliajia.github.io/blog/20150701/octopress-02.html"/>
+    <updated>2015-07-01T15:33:48+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150701/octopress-02</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、前提说明</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、基本配置的修改</a></li>
+</ul>
+
+<h3 id="section">一、前提说明</h3>
+<blockquote>
+  <ul>
+    <li>git bash在octopress目录下操作</li>
+    <li>所有文件必须是UTF8不带BOM格式的！可以使用notepad++进行转换。</li>
+    <li>以后我们将把octopress目录称为根（/）目录</li>
+    <li>//后面的内容表示注释</li>
+    <li>后面的步骤里如没有特殊说明将参照以上说明</li>
+  </ul>
+</blockquote>
+
+<!--more-->
+
+<h3 id="section-1">二、基本配置的修改</h3>
+<blockquote>
+  <ul>
+    <li>1.修改域名、作者以及网站标题
+      <ul>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>url: http://www.juliajia.com        //这里填写你的站点地址也就是域名</li>
+            <li>title: JuliaJia’s coding paradise    //这里填写你站点的名称</li>
+            <li>subtitle: 凤凰涅槃，三年不飞三年不鸣，要飞一飞冲天，要鸣一鸣惊人！      //这里填写站点的描述，但是一般大家都喜欢写喜欢的名言或者自己的志向</li>
+            <li>author: Julia Jia     //这里写站点的作者或者说博主姓名</li>
+            <li>keywords: 编程 大数据 算法 python C C++ 机器学习 深度学习 hadoop spark JAVA scala  //这里填写你这个站点的关键字，方便搜索引擎来爬。</li>
+            <li>description: 这里是JuliaJia的禅修之地，主要潜心研究机器学习、深度学习以及大数据有关的所有技术，也写一些自己的感悟体会和生活趣事儿。   //对这个博客站点进行简单的描述，这里的内容也是给搜索引擎看的。</li>
+            <li>这里需要注意的是，所有的冒号必须是英文冒号，并且冒号后面一定要有一个空格！切记！</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>2.修改文章链接形式
+      <ul>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>permalink: /blog/:year:month:day/:title.html       //这里填写博客页面的web链接格式</li>
+            <li>这么修改了以后页面链接就不会显得层级很多了</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>3.修改markdown文件后缀
+      <ul>
+        <li>octopress默认日志文件的后缀是markdown，我们可以修改配置文件让这个后缀更简短一些，还能针对文件的不同用途设定不同的后缀</li>
+        <li>修改配置文件/rakefile
+          <ul>
+            <li>new_post_ext = “md”      //设置post文件后缀为md</li>
+            <li>new_page_ext = ‘html’    //设置page文件后缀为html</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>4.修改默认markdown解释器
+      <ul>
+        <li>修改配置文件/Gemfile
+          <ul>
+            <li>在文件末尾添加一行：
+              <ul>
+                <li>gem ‘kramdown’</li>
+              </ul>
+            </li>
+            <li>然后在git bash中执行命令：
+              <ul>
+                <li>bundle install</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>修改配置文件/_config.yml
+          <ul>
+            <li>把以下内容删除：
+              <ul>
+                <li>markdown: rdiscount</li>
+                <li>rdiscount:
+                  <ul>
+                    <li>extensions:
+                      <ul>
+                        <li>autolink</li>
+                        <li>footnotes</li>
+                        <li>smart</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>然后再添加下面这句话：
+              <ul>
+                <li>markdown: kramdown</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>5.添加MathJax支持
+      <ul>
+        <li>修改配置文件/source/_includes/custom/head.html
+          <ul>
+            <li>添加如下代码
+<code>html head.html
+&lt;!-- MathJax --&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+processEscapes: true
+  }
+});
+&lt;/script&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+  MathJax.Hub.Config({
+tex2jax: {
+  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+}
+  });
+&lt;/script&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+  MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i &lt; all.length; i += 1) {
+  all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+  });
+&lt;/script&gt;
+&lt;script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;
+&lt;/script&gt;
+</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>至此，博客的基本配置就完成了，当然离最终的样子还差很多，不过饭要一口一口的吃，事儿要一件一件的做，我们下一篇开始讲解导航栏和侧边栏的定制。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【从零开始部署octopress系列之一】octopress安装与部署]]></title>
+    <link href="http://juliajia.github.io/blog/20150630/octopress-01.html"/>
+    <updated>2015-06-30T16:43:07+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150630/octopress-01</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、写这个系列的起因</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、部署之前需要做的事情</a></li>
+  <li><a href="#octopress" id="markdown-toc-octopress">三、octopress安装与部署</a></li>
+</ul>
+
+<h3 id="section">一、写这个系列的起因</h3>
+<p>接触octopress是源于一直以来我就想有个自己的博客，但是一直不想四处找稳定的空间（X宝的坑太多，国外的太贵）所以也就作罢，直到后来偶然在知乎上搜到一篇文章里面讲到如何利用github建立自己的博客，我多年想建个人博客的愿望又被激了起来，于是乎就开始了漫长的折腾。</p>
+
+<p>起先本来是用hexo不过我不喜欢那样的feel，当然萝卜青菜各有所爱，hexo有它自身的优势只不过我不喜欢罢了，后来翻来覆去的查找各种博客模板最终google到了octopress，刚开始部署按照教程去走也还算顺利，在本地看到了自带模板的模样，直觉告诉我 I like it!
+于是乎就喜滋滋的开始了octopress折腾之路，一路上披荆斩棘解决各种坑，几乎把google和百度都查了个遍，以至于凡是带octopress关键字的我都进去瞅过，终于有了现在这个博客，虽然还是很简陋，但是以我从来没有接触ruby（弄这个博客之前ruby是什么我都不知道。。。）、git（知道，但是从来没用过。。。）、html、css、JavaScript的情况来看，这已经是我能做的最好看的样子了，嘿嘿嘿！
+<!--more--></p>
+
+<p>介于我折腾的如此痛苦（部署期间我翻阅了各种跟octopress相关的博客，但是要么写的不全面，要么是在MAC下或者linux下的部署步骤不适合windows，要么插件按照他写的步骤完全没法用—年代久远等因素），所以我想把我折腾的整个过程总结出来，写一个全面的系列，这样一来方便我自己后续查阅，二来给后面用octopress的人一个参考，你按照我的步骤去做就能做出我现在博客的样子，省去了很多折腾的时间（虽然折腾的过程也很有乐趣，嘿嘿）以上就是我为什么要写这个系列的原因。</p>
+
+<h3 id="section-1">二、部署之前需要做的事情</h3>
+
+<blockquote>
+  <ul>
+    <li><code>step 1：github_page建立</code>
+      <ul>
+        <li><code>首先你得有个github账号（github.com 不要问我怎么注册的。。。。如果这都要人教，我觉得你可以告别使用octopress了）</code></li>
+        <li><code>然后你要创建一个名为yourname.github.io的库，这里的yourname一定要确保跟你用户名一模一样。</code></li>
+        <li><code>最后到https://msysgit.github.io/下载一个git进行安装（同样不要问我怎么安装。。。。）</code></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>step 2：安装Ruby</code>
+      <ul>
+        <li><code>到http://rubyinstaller.org/downloads/下载rubyinstallers以及其对应版本的DevKit</code></li>
+        <li><code>先安装rubyinstall并设置好环境变量（正常情况下，你安装完毕他会自动部署好环境变量，但是有的时候不生效，你可以在PATH结尾处再弄一个，记住一定要;号结尾），然后把DevKit解压到C盘下，并设置环境变量</code></li>
+        <li><code>如果你随便打开一个文件夹，空白处右键打开git bash输入ruby然后按下tab键能自动出来ruby.exe的选项，证明你环境变量设置成功了。</code></li>
+        <li><code>在git bash里进入DevKit的目录进行DevKit的安装</code>
+          <ul>
+            <li><code>cd /c/devkit</code></li>
+            <li><code>ruby.exe dk.rb init</code></li>
+            <li><code>ruby.exe dk.rb install</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>step 3：购买域名并绑定（可选）</code>
+      <ul>
+        <li><code>我的域名是在goddady买的，安全，而且可以使用支付宝（不过前提是不能使用超低折扣的折扣码，目前中国人能使用的折扣码只有8.99美元/年的）。别问我折扣码怎么得，自行百度。</code>
+          <ul>
+            <li><code>补充一些注意事项：</code>
+              <ul>
+                <li><code>注册时用户填写信息时一定要输入正确的邮箱名字，否则修改十分麻烦。</code></li>
+                <li><code>买完域名之后一定要记得去自己的邮箱查看激活邮件，否则域名激活不了。</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code>买了域名以后记得到my account下去查看域名是否已经在你账户下</code></li>
+        <li><code>DNS服务设置可以参考这个帖子http://www.admin5.com/article/20131014/527502.shtml</code></li>
+        <li><code>DNS智能解析绑定</code>
+          <ul>
+            <li><code>到DNSPOD（https://www.dnspod.cn/）上点击产品中心里的域名解析</code></li>
+            <li><code>点击添加域名然后填入你在goddady购买的域名</code></li>
+            <li><code>需要注意的点：</code>
+              <ul>
+                <li><code>CNAME的记录值后面有个.号，这个一定要有，要注意！</code></li>
+                <li><code>A的记录值要照着写，这个是github的地址。</code></li>
+                <li><code>另外默认存在的NS的记录值要原封不动的填到goddady的DNS绑定服务器选项里，前面的帖子里有写照着填就好了。</code></li>
+              </ul>
+            </li>
+            <li><code>具体设置可以参考下图：</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/DNS解析设置.png"></p>
+
+<h3 id="octopress">三、octopress安装与部署</h3>
+<blockquote>
+  <ul>
+    <li><code>下载标准的octopress模板：</code>
+      <ul>
+        <li><code>git clone git://github.com/imathis/octopress.git octopress</code></li>
+        <li><code>gem install bundler</code></li>
+      </ul>
+    </li>
+    <li><code>移除国外ruby源添加淘宝ruby源：</code>
+      <ul>
+        <li><code>gem sources --remove https://rubygems.org/</code></li>
+        <li><code>gem sources -a http://ruby.taobao.org/</code></li>
+        <li><code>gem sources -l</code></li>
+        <li><code>一定要确保只有一个源</code></li>
+      </ul>
+    </li>
+    <li><code>安装各种关联包</code>
+      <ul>
+        <li><code>bundle install</code>
+          <ul>
+            <li><code>这里一步可能会持续很长时间，因为会报各种关联包缺失，你按照他的提示安装关联包即可，一直装到bundle install提示安装完成为止</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><code>安装octopress默认主题</code>
+      <ul>
+        <li><code>rake install</code></li>
+      </ul>
+    </li>
+    <li><code>设置github_page库地址</code>
+      <ul>
+        <li><code>rake setup_github_pages</code>
+          <ul>
+            <li><code>这里填写的url是你自己的page库，格式如下：</code>
+              <ul>
+                <li><code>git@github.com:yourname/yourname.github.io.git</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><code>设置CNAME</code>
+      <ul>
+        <li><code>echo '你的域名' &gt;&gt; source/CNAME      //如果你有自己的域名可以这样操作绑定到github的二级域名上。</code></li>
+      </ul>
+    </li>
+    <li><code>生成静态页面</code>
+      <ul>
+        <li><code>rake generate</code></li>
+      </ul>
+    </li>
+    <li><code>本地测试</code>
+      <ul>
+        <li><code>rake preview</code></li>
+        <li><code>打开本地浏览器访问http://localhost:4000，如果能出来octopress默认页面就证明octopress本地库部署OK并且静态页面生成没有问题。</code></li>
+      </ul>
+    </li>
+    <li><code>push静态页面到你的github_page库上</code>
+      <ul>
+        <li><code>rake deploy</code></li>
+      </ul>
+    </li>
+    <li><code>备份本地octopress库到github_page库的source分支上</code>
+      <ul>
+        <li><code>git add .</code></li>
+        <li><code>git commit -am "YY-MM-DD-hh:mm"</code></li>
+        <li><code>git push origin source</code></li>
+      </ul>
+    </li>
+    <li><code>注意：以上的操作都要在octopress目录下做</code></li>
+    <li><code>访问你的域名看看是否能正常访问（域名绑定和解析需要等一段时间）</code></li>
+  </ul>
+</blockquote>
+
+<p>至此，整个octopress的安装与部署就完成了。但是默认的界面比较土，而且功能单一，所以后面将会逐步逐步的去给它添加插件以及修改框架，把它变成属于你的独一无二的博客。</p>
+]]></content>
+  </entry>
+  
+</feed>

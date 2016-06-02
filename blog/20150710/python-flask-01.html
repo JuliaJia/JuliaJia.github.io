@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World! - JuliaJia's coder paradise</title>
+  <meta name="author" content="Julia Jia">
+
+  
+  <meta name="description" content="一、部署python-flask的环境 二、部署python-flask基本环境 三、Hello World 一、部署python-flask的环境 操作系统：Ubuntu14.04-64bit 编辑器：Emacs24.3 Python版本：2.7 二、部署python-flask基本环境 1. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://juliajia.github.io/blog/20150710/python-flask-01.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="JuliaJia's coder paradise" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/libs/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+  <script src="/javascripts/menu.min.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"><font color="#36648B">JuliaJia's</font> <font color="#EE7621">coder</font>  <font color="#8968CD">paradise</font></a></h1>
+  
+    <h2>凤凰涅槃，三年不飞三年不鸣，要飞一飞冲天，要鸣一鸣惊人！</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="juliajia.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><font size="2" color="#00688B">Blog</font></a>
+    <ul>
+      <li><a href="/blog/about-me"><font size="2" color="#EE7621">ABOUT ME</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/date-categories"><font size="2" color="#CD3278">DATE_CATEGORIES</font></a>
+    <ul>
+      <li><a href="/blog/2015"><font size="2" color="#7CCD7C">2015</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/technology"><font size="2" color="#104E8B">TECHNOLOGY</font></a>
+    <ul>
+      <li><a href="/blog/algorithm"><font size="2" color="#778899">ALGORITHM</font></a></li>
+	  <li><a href="/blog/coding"><font size="2" color="#B03060">CODING</font></a></li>
+	  <li><a href="/blog/OPS"><font size="2" color="#8B6914">OPS</font></a></li>
+	  <li><a href="/blog/math"><font size="2" color="#8B5A2B">MATH</font></a></li>
+    </ul>
+</li>
+  <li><a href="/blog/life"><font size="2" color="#EE5C42">LIFE</font></a>
+    <ul>
+      <li><a href="/blog/miu"><font size="2" color="#EE799F">MIU~!MIU~!</font></a></li>
+	  <li><a href="/blog/travel"><font size="2" color="#EE9A00">TRAVEL</font></a></li>
+	  <li><a href="/blog/reading"><font size="2" color="#C67171">READING</font></a></li>
+	  <li><a href="/blog/riding"><font size="2" color="#CD2626">RIDING</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/nirvana-plan"><font size="2" color="#8B5742">NIRVANA PLAN</font></a>
+    <ul>
+      <li><a href="/blog/introspection"><font size="2" color="#68228B">INTROSPECTION</font></a></li>
+	  <li><a href="/blog/thinking"><font size="2" color="#9ACD32">THINKING</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/game"><font size="2" color="#CD0000">GAME</font></a>
+    <ul>
+      <li><a href="/blog/sony"><font size="2" color="#3A5FCD">SONY</font></a></li>
+	  <li><a href="/blog/the-xbox-empire"><font size="2" color="#3CB371">THE XBOX EMPIRE</font></a></li>
+	  <li><a href="/blog/the-pc-holy-land"><font size="2" color="#EE7621">THE PC HOLY LAND</font></a></li>
+	  <li><a href="/blog/electronic-sports-games"><font size="2" color="#1874CD">ELECTRONIC SOPRTS GAMES</font></a></li>
+	  <li><a href="/blog/online-game"><font size="2" color="#C71585">ONLINE GAME</font></a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/other"><font size="2" color="#6E8B3D">OTHER</font></a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-10T15:21:13+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:21 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://juliajia.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul id="markdown-toc">
+  <li><a href="#python-flask" id="markdown-toc-python-flask">一、部署python-flask的环境</a></li>
+  <li><a href="#python-flask-1" id="markdown-toc-python-flask-1">二、部署python-flask基本环境</a></li>
+  <li><a href="#hello-world" id="markdown-toc-hello-world">三、Hello World</a></li>
+</ul>
+
+<h3 id="python-flask">一、部署python-flask的环境</h3>
+<blockquote>
+  <ul>
+    <li>操作系统：Ubuntu14.04-64bit</li>
+    <li>编辑器：Emacs24.3</li>
+    <li>Python版本：2.7
+<!--more--></li>
+  </ul>
+</blockquote>
+
+<h3 id="python-flask-1">二、部署python-flask基本环境</h3>
+<blockquote>
+  <ul>
+    <li>1.部署flask的基础环境
+      <ul>
+        <li>sudo apt-get install python-virtualenv     //安装python的虚拟环境</li>
+        <li>mkdir /data/python-flask</li>
+        <li>cd /data/python-flask</li>
+        <li>virtualenv flask    //构建flask虚拟环境</li>
+      </ul>
+    </li>
+    <li>2.安装flask和flask的扩展：
+      <ul>
+        <li>flask/bin/pip install flask</li>
+        <li>flask/bin/pip install flask-login</li>
+        <li>flask/bin/pip install flask-openid</li>
+        <li>flask/bin/pip install flask-mail</li>
+        <li>flask/bin/pip install flask-sqlalchemy</li>
+        <li>flask/bin/pip install sqlalchemy-migrate</li>
+        <li>flask/bin/pip install flask-whooshalchemy</li>
+        <li>flask/bin/pip install flask-wtf</li>
+        <li>flask/bin/pip install flask-babel</li>
+        <li>flask/bin/pip install guess_language</li>
+        <li>flask/bin/pip install flipflop</li>
+        <li>flask/bin/pip install coverage</li>
+      </ul>
+    </li>
+    <li>3.创建web开发文件夹：
+      <ul>
+        <li>mkdir app</li>
+        <li>mkdir app/static</li>
+        <li>mkdir app/templates</li>
+        <li>mkdir tmp</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="hello-world">三、Hello World</h3>
+<blockquote>
+  <ul>
+    <li>1.创建一个简单的初始化脚本__init__.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/__init__.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span><span class="line">
+</span><span class="line"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</span><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">views</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>2.创建一个视图函数脚本views.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/views.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class="line"><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</span><span class="line"><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/index&#39;</span><span class="p">)</span>
+</span><span class="line"><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span><span class="line">    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>3.创建启动WEB服务器的脚本run.py</li>
+  </ul>
+</blockquote>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>/data/python-flask/run.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="c">#!flask/bin/python</span>
+</span><span class="line"><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span class="line">
+</span><span class="line"><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<blockquote>
+  <ul>
+    <li>4.给这个启动脚本添加可执行权限
+      <ul>
+        <li>chmod a+x run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>5.执行这个启动脚本
+      <ul>
+        <li>./run.py</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>成功执行启动脚本以后就可以用浏览器访问http://localhost:5000，然后就能看到Hello World啦！这样简单的python-flask就部署完毕了。下一篇我们将学习python-flask的模板用法以及一些简单的jinja2的语法，敬请期待！</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Julia Jia</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-07-10T15:21:13+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:21 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/basic/'>basic</a>
+  
+</span>
+
+
+	  
+
+<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
+<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
+<IMG alt="" src="http://7xjw6q.com1.z0.glb.clouddn.com/JuliaJia半身照照片.JPG" width=90 height=100></DIV> 
+<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
+作者： <A href="http://www.juliajia.com/">JuliaJia</A> <BR> 
+出处： <A href="http://www.juliajia.com/">http://www.juliajia.com/</A> 
+<BR>本文基于<a target="_blank" title="Creative Commons Attribution 2.5 China Mainland License" href="http://creativecommons.org/licenses/by/2.5/cn/"> 
+署名 2.5 中国大陆</a>许可协议发布，欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 
+<a href="http://www.juliajia.com/">JuliaJia</a>（包含链接）。 </DIV></DIV> 
+
+	  
+
+<span class="tags">
+  
+    <a class='tag' href='/blog/tags/from-0-to-1/'>from 0 to 1</a>, <a class='tag' href='/blog/tags/jinja2/'>jinja2</a>, <a class='tag' href='/blog/tags/python-flask/'>python-flask</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://juliajia.github.io/blog/20150710/python-flask-01.html" data-via="" data-counturl="http://juliajia.github.io/blog/20150710/python-flask-01.html" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20150710/programming-in-c-02.html" title="Previous Post: 【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）">&laquo; 【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20150710/python-flask-02.html" title="Next Post: 【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法">【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>JuliaJia</h1>
+  <img class="left" src="http://7xjw6q.com1.z0.glb.clouddn.com/头像.jpg" title="width=&quot;5&quot; height=&quot;10&quot;" alt="width=&quot;5&quot; height=&quot;10&quot;">
+  <p>80后技术宅，武大数学系毕业，BAT里待过两家，现在在一家小公司做运维经理，现居深圳。</p>
+  <p>目标：美国google研究院</p>
+  <p>目前研究方向：跟大数据有关的一切</p>
+  <p><a href="http://weibo.com/banbenlongma" target="_blank" title=" 我的微博"><i class="fa fa-weibo fa-2x"></i></a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20150710/python-flask-02.html">【龍馬君从零开始学习python-flask系列之二】python-flask模板的使用方法以及jinja2的一些简单语法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150710/python-flask-01.html">【龍馬君从零开始学习python-flask系列之一】部署python-flask并运行Hello World!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150710/programming-in-c-02.html">【龍馬君从零开始学C语言系列之二】Programming in C：第三章和第四章习题讲解（code实验笔记）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150708/programming-in-c-01.html">【龍馬君从零开始学C语言系列之一】Programming in C：第一至第四章（理论笔记）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150701/octopress-02.html">【从零开始部署octopress系列之二】octopress定制化部署(1)</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/basic/'>basic (6)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (2)</a></li>
+<li class='category'><a href='/blog/categories/devops/'>devops (1)</a></li>
+
+  </ul>
+</section><section>
+    <h1>Tags</h1>
+    <ul class="tag-cloud">
+        <li><a style="font-size: 61%" href="/blog/tags/c/">C(2)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/centos6-dot-5-64bit/">CentOS6.5-64bit(1)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/linux/">Linux(1)</a></li>
+<li><a style="font-size: 61%" href="/blog/tags/mit/">MIT(2)</a></li>
+<li><a style="font-size: 150%" href="/blog/tags/from-0-to-1/">from 0 to 1(6)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/git/">git(1)</a></li>
+<li><a style="font-size: 61%" href="/blog/tags/introduction-to-computer/">introduction to computer(2)</a></li>
+<li><a style="font-size: 61%" href="/blog/tags/jinja2/">jinja2(2)</a></li>
+<li><a style="font-size: 61%" href="/blog/tags/octopress/">octopress(2)</a></li>
+<li><a style="font-size: 61%" href="/blog/tags/python-flask/">python-flask(2)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/ruby/">ruby(1)</a></li>
+<li><a style="font-size: 5%" href="/blog/tags/saltstack/">saltstack(1)</a></li>
+
+    </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Julia Jia -
+  <span class="credit">Powered by <a href="http://www.juliajia.com">JuliaJia</a></span>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255528940'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255528940%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'juliajia';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://juliajia.github.io/blog/20150710/python-flask-01.html';
+        var disqus_url = 'http://juliajia.github.io/blog/20150710/python-flask-01.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <!--返回顶部开始-->
+<div id="full" style="width:0px; height:0px; position:fixed; right:180px; bottom:150px; z-index:100; text-align:center; background-color:transparent; cursor:pointer;">
+        <a href="#" onclick="goTop();return false;"><img src="http://7xjw6q.com1.z0.glb.clouddn.com/top.png" border=0 alt="返回顶部"></a>
+</div>
+<script src="/javascripts/top.js" type="text/javascript"></script>
+<!--返回顶部结束-->
+</body>
+</html>

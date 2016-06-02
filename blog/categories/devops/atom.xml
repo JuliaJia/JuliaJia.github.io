@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Devops | JuliaJia's coder paradise]]></title>
+  <link href="http://juliajia.github.io/blog/categories/devops/atom.xml" rel="self"/>
+  <link href="http://juliajia.github.io/"/>
+  <updated>2015-07-10T17:29:31+08:00</updated>
+  <id>http://juliajia.github.io/</id>
+  <author>
+    <name><![CDATA[Julia Jia]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【saltstack】saltstack初步安装与部署]]></title>
+    <link href="http://juliajia.github.io/blog/20150630/saltstack-01.html"/>
+    <updated>2015-06-30T16:30:42+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150630/saltstack-01</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#saltstack-master" id="markdown-toc-saltstack-master">一、saltstack-master服务器安装</a></li>
+  <li><a href="#saltstack-minion" id="markdown-toc-saltstack-minion">二、saltstack-minion服务器安装</a></li>
+  <li><a href="#saltstack-minion-1" id="markdown-toc-saltstack-minion-1">三、saltstack-minion服务器部署</a></li>
+  <li><a href="#saltstack-master-1" id="markdown-toc-saltstack-master-1">四、saltstack-master服务器部署</a></li>
+</ul>
+
+<h3 id="saltstack-master">一、saltstack-master服务器安装</h3>
+<blockquote>
+  <ul>
+    <li>step 1：部署epel源
+      <ul>
+        <li>CentOS6-64bit：
+          <ul>
+            <li>rpm -Uvh http://mirrors.yun-idc.com/epel/6Server/x86_64/epel-release-6-8.noarch.rpm</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>step 2：安装salt-master服务器
+      <ul>
+        <li>CentOS6-64bit：
+          <ul>
+            <li>yum -y install salt-master
+<!--more--></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="saltstack-minion">二、saltstack-minion服务器安装</h3>
+<blockquote>
+  <ul>
+    <li>step 1：部署epel源
+      <ul>
+        <li>CentOS6-64bit：
+          <ul>
+            <li>rpm -Uvh http://mirrors.yun-idc.com/epel/6Server/x86_64/epel-release-6-8.noarch.rpm</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>step 2：安装salt-minion服务器
+      <ul>
+        <li>CentOS6-64bit：
+          <ul>
+            <li>yum -y install salt-minion</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="saltstack-minion-1">三、saltstack-minion服务器部署</h3>
+<blockquote>
+  <ul>
+    <li>step 1：修改minion服务器配置文件
+      <ul>
+        <li>编辑/etc/salt/minion文件
+          <ul>
+            <li>master: 【这里填写master的主机名】</li>
+            <li>PS：master前面一定要加两个空格，不然服务起不来。</li>
+          </ul>
+        </li>
+        <li>编辑/etc/hosts
+          <ul>
+            <li>【master的IP】 【master的主机名】</li>
+            <li>PS：注意这里的master主机名一定要和minion配置文件里配置的名称一致</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>step 2：启动salt-minion服务
+      <ul>
+        <li>/etc/init.d/salt-minion start</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="saltstack-master-1">四、saltstack-master服务器部署</h3>
+<blockquote>
+  <ul>
+    <li>step 1：设置master日志
+      <ul>
+        <li>编辑/etc/salt/master
+          <ul>
+            <li>log_level: debug</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>step 2：启动salt-master服务
+      <ul>
+        <li>/etc/init.d/salt-master start</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+]]></content>
+  </entry>
+  
+</feed>

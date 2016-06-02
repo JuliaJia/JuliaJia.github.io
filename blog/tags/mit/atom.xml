@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: MIT | JuliaJia's coder paradise]]></title>
+  <link href="http://juliajia.github.io/blog/tags/mit/atom.xml" rel="self"/>
+  <link href="http://juliajia.github.io/"/>
+  <updated>2015-07-10T17:29:31+08:00</updated>
+  <id>http://juliajia.github.io/</id>
+  <author>
+    <name><![CDATA[Julia Jia]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【计算机导论】第二课 条件分支语句和循环语句]]></title>
+    <link href="http://juliajia.github.io/blog/20150627/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%BA%8C%E8%AF%BE%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.html"/>
+    <updated>2015-06-27T20:24:01+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150627/Post-计算机导论 第二课 分支语句和循环语句</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、运算符和运算对象</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三、声明</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">四、分支语句与循环语句</a></li>
+</ul>
+
+<h3 id="section">一、课程目标</h3>
+<ul>
+  <li>计算的根本的具体内容</li>
+  <li>一些运算符和运算对象方面的内容<strong>（课程重点）</strong></li>
+  <li>写代码时关键的模块也就是声明<strong>（课程重点）</strong></li>
+  <li>一系列简单的程序的介绍尤其是条件分支语句和循环语句（又叫迭代语句）<strong>（课程重点）</strong> 
+<!--more--></li>
+</ul>
+
+<hr />
+
+<h3 id="section-1">二、运算符和运算对象</h3>
+<ul>
+  <li>运算对象</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>运算对象分为以下三种类型</code>
+      <ul>
+        <li>数字类型
+          <ul>
+            <li>数字是用来描述数值的</li>
+          </ul>
+        </li>
+        <li>字符串类型
+          <ul>
+            <li>字符串是变现文本信息的基本方式</li>
+          </ul>
+        </li>
+        <li>布尔类型</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>类型的转换</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>在python中可以使用类型转换符进行类型的转换</li>
+    <li>类型转换的必要性：
+      <ul>
+        <li>如果我想从一种特定的方式把两个东西结合到一块，我需要确定给了运算符它想要的输入，也就是说只有类型统一了运算符才能正常的去处理。</li>
+      </ul>
+    </li>
+    <li>关于类型的检查：
+      <ul>
+        <li>有的语言会很严格的执行类型检查的工作（比如python），还有一些语言则没有这部分功能（比如LISP）</li>
+        <li>类型的检查会使得排错更加便利。</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>表达式是由运算符和运算对象组成的。</li>
+  <li>运算符</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>当你写代码的时候应该养成以下编码习惯：
+      <ul>
+        <li>检查运算符或者程序来看看它们在不同的条件下呈现的行为是什么</li>
+        <li>如果在程序中你想要约束参数或者运算符的运算对象时，你需要一个规范来确定python做了正确的事情。</li>
+      </ul>
+    </li>
+    <li>运算优先级：
+      <ul>
+        <li>在相同条件下，指数操作的优先级高于乘法和除法</li>
+        <li>乘法和除法的优先级高于加法和减法</li>
+        <li>当你想要改变既定优先级时，请用括号</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-2">三、声明</h3>
+<ul>
+  <li>
+    <p>赋值声明
+<code>python 关于赋值声明的简单例子.py
+x = 3    //把变量X和数值3链接起来
+y = 3    //把变量y和数值3链接起来
+z = x    //把变量z和变量x的数值链接起来，注意这里是和变量x的数值关联起来不是和变量x关联起来
+</code></p>
+  </li>
+  <li>
+    <p>变量</p>
+  </li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>之前一课讲过变量是用来存储数值的，所以变量会从数值那里继承类型的属性。因此变量的绑定是动态的，或者说变量的类型是动态的，是随着数值的变化而变化的。
+      <ul>
+        <li><strong>不要反复无常的改变变量的类型</strong></li>
+      </ul>
+    </li>
+    <li>在什么地方可以应用变量？
+      <ul>
+        <li>在需要用到数值的任何地方都可以使用变量</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>声明的描述</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>声明就是能被语言解释的正确合法的命令，比如前面所描述的赋值的声明还有下面的代码所展现的print的声明等
+<code>python 关于声明的描述.py
+x = 3    //Creat variable x and assign value 3 to it
+x = x * x    //Bind x to value 9
+print x
+n = raw_input('Enter a number: ')
+print n
+</code></li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>编码风格的介绍</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>优秀的编码风格包含以下两点：
+      <ul>
+        <li>写好注释
+          <ul>
+            <li>好的注释能帮助你或者其他阅读这段代码的人了解这段代码是用来做什么的，它会导致怎样的结果，从而便于更好的理解程序本身。</li>
+          </ul>
+        </li>
+        <li>选择易明白的变量名称
+          <ul>
+            <li>尽量用有意义的变量名字，但要注意保留关键词，每个语言都会有各自的保留关键词（比如python的print，这个就是个保留关键词），要注意避免使用这些作为变量名。</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="section-3">四、分支语句与循环语句</h3>
+<ul>
+  <li>分支语句</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>分支语句就是一个能基于一些条件判断来改变指令顺序的语句，判断通常是基于布尔值来进行的，true就执行false就跳过。
+<code>python 一个简单的分支语句.py
+x = 15
+if (x/2)*2 == x:    //判断X是奇数还是偶数
+  print "Even"    //偶数打印Even
+else:
+  print "Odd"    //奇数打印Odd
+</code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>代码中的冒号标识了一块指令集的开始，它表明了下面的指令要当做一整块来对待（在python里用相同的缩进来区分不同的指令集）</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>分支语句的格式：
+  if <判断表达式>:
+      指令集1
+  else:
+      指令集2</判断表达式></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>使用条件语句两个重要的点：
+      <ul>
+        <li>1.当我们写代码的时候，在写判断方法时，应该为每一个可能的程序路径都设计一个特别的判断方法</li>
+        <li>2.判断条件应该尽量写得全面（必要时可以使用布尔运算符进行条件的组合）
+          <ul>
+            <li>布尔类型：
+              <ul>
+                <li>布尔运算符：’and’，’or’，’not’</li>
+                <li>布尔值：’true’,’false’</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>循环语句</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>如何实现迭代
+      <ul>
+        <li>一个简单的迭代流程图：</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="http://7xjw6q.com1.z0.glb.clouddn.com/第二课流程图-01.png" title="" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【计算机导论】第一课 课程目标 数据类型 运算以及变量]]></title>
+    <link href="http://juliajia.github.io/blog/20150624/Post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%20%E7%AC%AC%E4%B8%80%E8%AF%BE%20%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%20%E8%BF%90%E7%AE%97%E4%BB%A5%E5%8F%8A%E5%8F%98%E9%87%8F.html"/>
+    <updated>2015-06-24T19:59:00+08:00</updated>
+    <id>http://juliajia.github.io/blog/20150624/Post-计算机导论 第一课 课程目标 数据类型 运算以及变量</id>
+    <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">一、课程目标</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">二、课程基本信息</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">三、计算思维的概念和方法（核心）</a></li>
+  <li><a href="#python" id="markdown-toc-python">四、关于Python的一些简单介绍</a></li>
+</ul>
+
+<h3 id="section">一、课程目标</h3>
+<ul>
+  <li>了解计算在解决技术问题中所扮演的角色</li>
+  <li>使用计算思维的基本工具来编写小规模的代码<strong>（写）</strong></li>
+  <li>使用计算工具的语言用来理解别人编写的程序<strong>（读）</strong></li>
+  <li>了解计算的基本能力和局限以及他们的代价<strong>（知道你能干什么，不能干什么）</strong></li>
+  <li>把科学问题转换进计算机的框架之内<strong>（应用）</strong>
+<!--more--></li>
+</ul>
+
+<hr />
+
+<h3 id="section-1">二、课程基本信息</h3>
+<ul>
+  <li>语言：<code>python</code></li>
+  <li>课程重应用,不重死记硬背！</li>
+  <li>提出问题很重要！</li>
+  <li>记笔记的过程就是锻炼的过程！</li>
+</ul>
+
+<hr />
+
+<h3 id="section-2">三、计算思维的概念和方法（核心）</h3>
+<ul>
+  <li>核心理念：像一个<code>计算机科学家</code>一样思考！</li>
+  <li>计算模式思维：</li>
+  <li>什么是计算相关？</li>
+  <li>什么是知识？</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>知识分为两种类型：</code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><code>1.陈述性的知识</code></p>
+</blockquote>
+
+<blockquote>
+  <p><em><code>所谓陈述性的知识就是用叙述事实的方式来思考它。比如定理、原理等，它不会帮你计算，它顶多帮你检查正确性，对你的操作做标杆/参考。</code></em></p>
+</blockquote>
+
+<blockquote>
+  <p><code>2.程序性的知识</code></p>
+</blockquote>
+
+<blockquote>
+  <p><em><code>所谓程序性的知识就是对推论过程的描述，比如猜想、测试等，他会让你知道如何寻找定理/原理。它是方法，是关于怎么办的知识。</code></em></p>
+</blockquote>
+
+<ul>
+  <li>我怎么样才能建立计算机程序去捕捉一系列的计算呢?</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>1.用来解决某种专门的问题—固定程序式计算机，比如计算器、密码机等 </code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>2.用某种方法来实现想法的设备—存储程序式计算机 </code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>3.计算机的核心：在初始指令序列上建造描述、方法的一个概念</code></li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>语言的三个维度：</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>1.这个语言是一个高级还是低级的语言-----你能有多靠近机器的核心呢？</code>
+      <ul>
+        <li><code>低级语言：曾经称之为假设编程，它只是出于用基本要素把一些数据碎片从记忆存储器的一个地方通过简单的操作来转到另外一个地方。</code></li>
+        <li><code>高级语言：设计者制造了丰富的原始要素</code></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>2.这个语言的目标群体是比较大众还是有特定面向群体的</code>
+      <ul>
+        <li><code>也就是说这个基本集合是不是支持比较多的程序或者是不是面向某一特定种类的程序的</code></li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>3.这个语言是编译语言还是解释语言</code>
+      <ul>
+        <li><code>解释语言----需要写一些叫做源码的东西，你写的东西会经过一个简单的过滤器然后解释器会处理你的源码，解释器会产生一个逐条读取你源码的控制流，然后返回一个输出结果。因此解释器在运行程序的时候会直接的对你的代码进行操作。</code></li>
+        <li><code>编译语言----你会经过一个中间的步骤，在这种语言里输入源码后，先经过过滤器或者编译器检查后他会创建一个叫做目标代码的东西，这有两点好处:</code>
+          <ul>
+            <li><code>1.可以帮助你发现程序中的bug</code></li>
+            <li><code>2.把你的代码在运行之前转换为更有效率的指令的集合</code></li>
+          </ul>
+        </li>
+        <li><code>解释语言和编译语言之间的区别：</code>
+          <ul>
+            <li><code>解释语言调试起来很容易，但是这种语言不够快</code></li>
+            <li><code>编译语言很快，但是调试起来麻烦</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="python">四、关于Python的一些简单介绍</h3>
+<ul>
+  <li>python：高级语言、面向广泛、解释语言</li>
+  <li>作为本课程的主打语言，我们需要为它建立“食谱”</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><code>得到问题然后将问题分解为计算步骤，这些指令集可以让我们看到这个过程</code></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code>为了达到这个目的，我们需要描述：包括程序基本的东西以及怎么在这种语言中做我们想做的事情并和计算机交互。</code>
+      <ul>
+        <li><code>语言的元素：</code>
+          <ul>
+            <li><code>1.语法与语义的区分：</code>
+              <ul>
+                <li><code>1.语法</code>
+                  <ul>
+                    <li><code>语法就是这个语言的合理表示是什么。语法会告诉你怎么把写好的表达式合理的放在一起描述</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><code>2.语义</code>
+              <ul>
+                <li><code>1.static的语义</code>
+                  <ul>
+                    <li><code>static的语义主要讲述哪些程序是有意义的，static的语义有助于帮助我们决定哪些表达哪部分的代码实际上是有意义的。</code></li>
+                  </ul>
+                </li>
+                <li><code>2.full的语义</code>
+                  <ul>
+                    <li><code>full的语义描述程序到底有什么意义或者说full的语义会告诉我们当我运行程序的时候会发生什么。</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code>程序的一些基本元素：</code>
+          <ul>
+            <li><code>1.数据类型：</code>
+              <ul>
+                <li><code>1.数字</code>
+                  <ul>
+                    <li><code>1.int（整型）</code></li>
+                    <li><code>2.float（浮点型）</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><code>2.字符串</code>
+              <ul>
+                <li><code>字符串格式：'abc'</code></li>
+              </ul>
+            </li>
+            <li><code>3.运算符</code>
+              <ul>
+                <li><code>简单的+-*/</code></li>
+              </ul>
+            </li>
+            <li><code>4.变量</code>
+              <ul>
+                <li><code>变量的作用就是把值存储起来。</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+</feed>

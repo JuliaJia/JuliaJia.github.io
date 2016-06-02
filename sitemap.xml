@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://www.juliajia.com/blog/20160603/Post-%25E7%2588%25B1%25E8%25BD%25A6%25E6%2597%25A5%25E8%25AE%25B0%25EF%25BC%2588%25E4%25B8%2580%25EF%25BC%2589.html</loc>
+<lastmod>2016-06-03T05:40:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://www.juliajia.com/blog/20160602/Post-%25E8%25AF%25BB%25E4%25BC%25A0%25E4%25B9%25A0%25E5%25BD%2595%25E6%259C%2589%25E6%2584%259F%25EF%25BC%2588%25E4%25B8%2580%25EF%25BC%2589.html</loc>
 <lastmod>2016-06-02T05:40:00+08:00</lastmod>
 </url>
@@ -153,5 +157,11 @@
 </url>
 <url>
 <loc>http://www.juliajia.com/blog/tags/qiu-que-zhai/</loc>
+</url>
+<url>
+<loc>http://www.juliajia.com/blog/tags/che/</loc>
+</url>
+<url>
+<loc>http://www.juliajia.com/blog/tags/xing-qu-ai-hao/</loc>
 </url>
 </urlset>

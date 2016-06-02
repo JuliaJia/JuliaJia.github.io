@@ -2,17 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Tag: saltstack | JuliaJia's coder paradise]]></title>
-<<<<<<< HEAD
   <link href="http://www.juliajia.com/blog/tags/saltstack/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
-  <updated>2016-06-02T22:01:38+08:00</updated>
+  <updated>2016-06-02T22:22:45+08:00</updated>
   <id>http://www.juliajia.com/</id>
-=======
-  <link href="http://juliajia.github.io/blog/tags/saltstack/atom.xml" rel="self"/>
-  <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-10T17:29:31+08:00</updated>
-  <id>http://juliajia.github.io/</id>
->>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
   <author>
     <name><![CDATA[Julia Jia]]></name>
     
@@ -22,15 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[【saltstack】saltstack初步安装与部署]]></title>
-<<<<<<< HEAD
     <link href="http://www.juliajia.com/blog/20150630/saltstack-01.html"/>
     <updated>2015-06-30T16:30:42+08:00</updated>
     <id>http://www.juliajia.com/blog/20150630/saltstack-01</id>
-=======
-    <link href="http://juliajia.github.io/blog/20150630/saltstack-01.html"/>
-    <updated>2015-06-30T16:30:42+08:00</updated>
-    <id>http://juliajia.github.io/blog/20150630/saltstack-01</id>
->>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#saltstack-master" id="markdown-toc-saltstack-master">一、saltstack-master服务器安装</a></li>
   <li><a href="#saltstack-minion" id="markdown-toc-saltstack-minion">二、saltstack-minion服务器安装</a></li>

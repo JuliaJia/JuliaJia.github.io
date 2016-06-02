@@ -2,17 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Blog | JuliaJia's coder paradise]]></title>
-<<<<<<< HEAD
   <link href="http://www.juliajia.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
-  <updated>2016-06-02T22:01:38+08:00</updated>
+  <updated>2016-06-02T22:22:45+08:00</updated>
   <id>http://www.juliajia.com/</id>
-=======
-  <link href="http://juliajia.github.io/blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://juliajia.github.io/"/>
-  <updated>2015-07-10T17:29:31+08:00</updated>
-  <id>http://juliajia.github.io/</id>
->>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
   <author>
     <name><![CDATA[Julia Jia]]></name>
     
@@ -22,15 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[【从零开始部署octopress系列之二】octopress定制化部署(1)]]></title>
-<<<<<<< HEAD
     <link href="http://www.juliajia.com/blog/20150701/octopress-02.html"/>
     <updated>2015-07-01T15:33:48+08:00</updated>
     <id>http://www.juliajia.com/blog/20150701/octopress-02</id>
-=======
-    <link href="http://juliajia.github.io/blog/20150701/octopress-02.html"/>
-    <updated>2015-07-01T15:33:48+08:00</updated>
-    <id>http://juliajia.github.io/blog/20150701/octopress-02</id>
->>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、前提说明</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">二、基本配置的修改</a></li>
@@ -178,15 +165,9 @@ tex2jax: {
   
   <entry>
     <title type="html"><![CDATA[【从零开始部署octopress系列之一】octopress安装与部署]]></title>
-<<<<<<< HEAD
     <link href="http://www.juliajia.com/blog/20150630/octopress-01.html"/>
     <updated>2015-06-30T16:43:07+08:00</updated>
     <id>http://www.juliajia.com/blog/20150630/octopress-01</id>
-=======
-    <link href="http://juliajia.github.io/blog/20150630/octopress-01.html"/>
-    <updated>2015-06-30T16:43:07+08:00</updated>
-    <id>http://juliajia.github.io/blog/20150630/octopress-01</id>
->>>>>>> 674d77a10cec5018d88a39581245c4fd5a92f5f8
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">一、写这个系列的起因</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">二、部署之前需要做的事情</a></li>

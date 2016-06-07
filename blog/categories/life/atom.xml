@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Life | JuliaJia's coder paradise]]></title>
   <link href="http://www.juliajia.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.juliajia.com/"/>
-  <updated>2016-06-07T11:24:20+08:00</updated>
+  <updated>2016-06-07T11:32:46+08:00</updated>
   <id>http://www.juliajia.com/</id>
   <author>
     <name><![CDATA[Julia Jia]]></name>
@@ -30,41 +30,141 @@
 <p>今天很早就起来了，洗漱完毕小休了一下就开车到了公司上班，6点30出发的话是完全可以7点30到达公司的。今天在公司无所事事的看了两集《奔跑吧兄弟第四季》然后读了十页《传习录》并做了心得记录。休闲的时候也玩了几盘《皇室战争：部落冲突》觉得这个小游戏还是蛮有意思，一场战斗也就几分钟时间，不是很累人却很有意思。</p>
 
 <h3 id="section">慎独：</h3>
-<p>|——–+——–|
-| 时间段 | 6月4日 |
-|————-|—–:|
-| 0：00-1：00 | 睡觉 |
-| 1：00-2：00 | 睡觉 |
-| 2：00-3：00 | 睡觉 |
-| 3：00-4：00 | 睡觉 |
-| 4：00-5：00 | 睡觉 |
-| 5：00-6：00 | 睡觉 |
-| 6：00-7：00 | 开车上班 |
-| 7：00-8：00 | 开车上班 |
-| 8：00-9：00 | 看《跑男第四季》 |
-| 9：00-10：00 | 看《跑男第四季》 |
-| 10：00-11：00 | 看《跑男第四季》 |
-| 11：00-12：00 | 午餐 |
-| 12：00-13：00 | 看《跑男第四季》 |
-| 13：00-14：00 | 看《跑男第四季》 |
-| 14：00-15：00 | 阅读《传习录》并做笔记 |
-| 15：00-16：00 | 写blog |
-| 16：00-17：00 | 写日志 |
-| 17：00-18：00 | 跟妈妈打电话 |
-| 18：00-19：00 | 等mandy和leo |
-| 19：00-20：00 | 跟leo和mandy一起去吃海鲜大餐 |
-| 20：00-21：00 | 跟leo和mandy一起去吃海鲜大餐 |
-| 21：00-22：00 | 送leo去酒店 |
-| 22：00-23：00 | 开车回家 |
-| 23：00-00：00 | 洗漱睡觉 |
-| 计划完成情况 | 近日没有制定计划 |
-| 学习情况 | 无 |
-| 工作情况 | 无 |
-| 生活状态 | 今天饮食不规律，早上没吃饱，中午吃太多，饮食不均衡是大忌，要改正！！！ |
-| 健身情况 | 无 |
-| 修养品行 | 阅读了《传习录》并做了记录，但今天为人处事做得非常不好，发了无名火，这是万万要不得的！！！！无论是对别人还是对自己都不好，对外伤感情对内伤身体，以后切莫做这种损人不利己的事情了！！！！ |
-| 一天总结 | 今天有点贪玩，没有干太多的正事儿，要警醒！！！！！ |
-|——–+——–|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">时间段</th>
+      <th style="text-align: center">6月4日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0：00-1：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1：00-2：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2：00-3：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3：00-4：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4：00-5：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5：00-6：00</td>
+      <td style="text-align: center">睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6：00-7：00</td>
+      <td style="text-align: center">开车上班</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7：00-8：00</td>
+      <td style="text-align: center">开车上班</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8：00-9：00</td>
+      <td style="text-align: center">看《跑男第四季》</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9：00-10：00</td>
+      <td style="text-align: center">看《跑男第四季》</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10：00-11：00</td>
+      <td style="text-align: center">看《跑男第四季》</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11：00-12：00</td>
+      <td style="text-align: center">午餐</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12：00-13：00</td>
+      <td style="text-align: center">看《跑男第四季》</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13：00-14：00</td>
+      <td style="text-align: center">看《跑男第四季》</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14：00-15：00</td>
+      <td style="text-align: center">阅读《传习录》并做笔记</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">15：00-16：00</td>
+      <td style="text-align: center">写blog</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16：00-17：00</td>
+      <td style="text-align: center">写日志</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">17：00-18：00</td>
+      <td style="text-align: center">跟妈妈打电话</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">18：00-19：00</td>
+      <td style="text-align: center">等mandy和leo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">19：00-20：00</td>
+      <td style="text-align: center">跟leo和mandy一起去吃海鲜大餐</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">20：00-21：00</td>
+      <td style="text-align: center">跟leo和mandy一起去吃海鲜大餐</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">21：00-22：00</td>
+      <td style="text-align: center">送leo去酒店</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">22：00-23：00</td>
+      <td style="text-align: center">开车回家</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">23：00-00：00</td>
+      <td style="text-align: center">洗漱睡觉</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">计划完成情况</td>
+      <td style="text-align: center">近日没有制定计划</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">学习情况</td>
+      <td style="text-align: center">无</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">工作情况</td>
+      <td style="text-align: center">无</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">生活状态</td>
+      <td style="text-align: center">今天饮食不规律，早上没吃饱，中午吃太多，饮食不均衡是大忌，要改正！！！</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">健身情况</td>
+      <td style="text-align: center">无</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">修养品行</td>
+      <td style="text-align: center">阅读了《传习录》并做了记录，但今天为人处事做得非常不好，发了无名火，这是万万要不得的！！！！无论是对别人还是对自己都不好，对外伤感情对内伤身体，以后切莫做这种损人不利己的事情了！！！！</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">一天总结</td>
+      <td style="text-align: center">今天有点贪玩，没有干太多的正事儿，要警醒！！！！！</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="section-1">慎言：</h3>
 
